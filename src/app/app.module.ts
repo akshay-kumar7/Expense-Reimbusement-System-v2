@@ -10,6 +10,7 @@ import { ApprovePendingReimbursementsComponent } from './pending-reimbursements/
 import { DenyPendingReimbursementsComponent } from './pending-reimbursements/deny-pending-reimbursements/deny-pending-reimbursements.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ViewPendingReimbursementsComponent,
     ApprovePendingReimbursementsComponent,
     DenyPendingReimbursementsComponent,
+    ViewUpdateInformationComponent,
   ],
   imports: [
     BrowserModule,
