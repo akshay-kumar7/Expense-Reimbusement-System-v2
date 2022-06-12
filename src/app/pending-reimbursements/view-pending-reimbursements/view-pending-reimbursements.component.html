@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+        </div>
+        <h2>View Pending Reimbursements</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>REIMBURSEMENT ID</td>
+                    <td>EMPLOYEE ID</td>
+                    <td>MANAGER ID</td>
+                    <td>STATUS</td>
+                    <td>AMOUNT</td>
+                    <td>REASON</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reimbursement of currentAllPendingReimbursements">
+                    <td>{{ reimbursement.reimbursementId }}</td>
+                    <td>{{ reimbursement.employeeId }}</td>
+                    <td>{{ reimbursement.managerId}}</td>
+                    <td>{{ reimbursement.status }}</td>
+                    <td>{{ reimbursement.amount }}</td>
+                    <td>{{ reimbursement.reason }}</td>
+                    <td>
+                        <button type="button" class="btn btn-success">
+                            <i class="material-icons">thumb_up</i>
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            <i class="material-icons">thumb_down</i>
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-2">
+    </div>
+</div>
+
