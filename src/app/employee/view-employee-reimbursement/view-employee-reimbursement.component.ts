@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view-employee-reimbursement',
+  selector: 'view-employee-reimbursement',
   templateUrl: './view-employee-reimbursement.component.html',
   styleUrls: ['./view-employee-reimbursement.component.css']
 })
