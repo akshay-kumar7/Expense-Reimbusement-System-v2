@@ -4,7 +4,8 @@ import { ViewUpdateInformationComponent } from './employee/view-update-informati
 import { ApprovePendingReimbursementsComponent } from './pending-reimbursements/approve-pending-reimbursements/approve-pending-reimbursements.component';
 import { DenyPendingReimbursementsComponent } from './pending-reimbursements/deny-pending-reimbursements/deny-pending-reimbursements.component';
 import { ViewPendingReimbursementsComponent } from './pending-reimbursements/view-pending-reimbursements/view-pending-reimbursements.component';
-import { ViewAllEmployeesComponent } from './view-employee/view-all-employees/view-all-employees.component';
+import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
+import { ViewEmployeeReimbursementComponent } from './employee/view-employee-reimbursement/view-employee-reimbursement.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: "approve-pending-reimbursements", component: ApprovePendingReimbursementsComponent},
   { path: "display", component: DenyPendingReimbursementsComponent},
   { path: "view-update-information", component: ViewUpdateInformationComponent},
-  { path: "view-all-employees", component: ViewAllEmployeesComponent}
+  { path: "view-all-employees", component: ViewAllEmployeesComponent},
+  { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent}
 
 ];
 
