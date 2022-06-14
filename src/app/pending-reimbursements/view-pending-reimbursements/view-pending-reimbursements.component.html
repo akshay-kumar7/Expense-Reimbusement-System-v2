@@ -25,12 +25,16 @@
                     <td>{{ reimbursement.amount }}</td>
                     <td>{{ reimbursement.reason }}</td>
                     <td>
-                        <button type="button" class="btn btn-success">
+                        <button type="button" 
+                        class="btn btn-success"
+                        (click)="approveRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
                             <i class="material-icons">thumb_up</i>
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" 
+                        class="btn btn-danger"
+                        (click)="denyRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
                             <i class="material-icons">thumb_down</i>
                         </button>
                     </td>
