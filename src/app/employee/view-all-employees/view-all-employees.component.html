@@ -3,7 +3,7 @@
         <div class="col-1">
         </div>
         <div class="col-10">
-            <h2>View Employee Request</h2>
+            <h2>View All Employees</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -31,7 +31,10 @@
                         <td> {{ employeeTest.lastName}}</td>
                         <td> {{ employeeTest.email}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger">Reimbursement
+                            <button 
+                                type="button" 
+                                class="btn btn-success">View Employee Reimbursement
+                                <!-- (click)="viewReimbursement()" -->
                             </button>
                         </td>
                     </tr>

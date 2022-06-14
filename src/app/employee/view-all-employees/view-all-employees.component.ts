@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Employee } from '../employee.model';
+import { EmployeeService } from '../employee.service';
 
 
 @Component({
@@ -27,13 +28,16 @@ export class ViewAllEmployeesComponent implements OnInit {
     };
 
 
-  constructor(router: Router) {
-    this.viewAllEmployees = [];
+  constructor(private router: Router,
+    private employeeService : EmployeeService) {
+      this.viewAllEmployees = [];
   }
 
   ngOnInit(): void {
   }
 
-
+  // viewReimbursement(employeeId : number) {
+  //   this.router.navigate(['view-employee-reimbursement', employeeId]);
+  // }
 
 }
