@@ -1,4 +1,4 @@
-export interface reimbursement{
+export interface Reimbursement{
     reimbursementId: number,
     employeeId: number,
     managerId: number,
