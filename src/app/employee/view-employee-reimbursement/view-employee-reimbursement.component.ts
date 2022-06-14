@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PendingReimbursementsService } from 'src/app/pending-reimbursements/pending-reimbursements.service';
 import { reimbursement } from 'src/app/pending-reimbursements/reimbursement.model';
 import { Employee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
@@ -12,11 +13,14 @@ import { EmployeeService } from '../employee.service';
 export class ViewEmployeeReimbursementComponent implements OnInit {
 
   viewEmployeeReimbursement: reimbursement[];
+  viewAllEmployees : Employee[];
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private employeeService : EmployeeService) {
-    this.viewEmployeeReimbursement = [];
+    private employeeService : EmployeeService,
+    private reimbursementService : PendingReimbursementsService) {
+     this.viewEmployeeReimbursement = [];
+     this.viewAllEmployees = [];
   }
 
   ngOnInit(): void {
@@ -25,6 +29,9 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
       // this.displayReimbursement = response;
     });
   }
+
+
+  
 
 
 
