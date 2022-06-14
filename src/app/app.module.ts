@@ -11,9 +11,8 @@ import { DenyPendingReimbursementsComponent } from './pending-reimbursements/den
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
-import { ViewEmployeeReimbursementComponent } from './view-employee/view-employee-reimbursement/view-employee-reimbursement.component';
-import { ViewAllEmployeesComponent } from './view-employee/view-all-employees/view-all-employees.component';
-
+import { ViewEmployeeReimbursementComponent } from './employee/view-employee-reimbursement/view-employee-reimbursement.component';
+import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
 
 @NgModule({
   declarations: [
