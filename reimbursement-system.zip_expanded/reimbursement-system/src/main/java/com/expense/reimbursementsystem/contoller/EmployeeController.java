@@ -17,7 +17,7 @@ import com.expense.reimbursementsystem.service.EmployeeService;
 @CrossOrigin
 @RestController
 @RequestMapping("api")
-public class EmployeeContoller {
+public class EmployeeController {
 
 	@Autowired
 	EmployeeService employeeService;
@@ -33,7 +33,13 @@ public class EmployeeContoller {
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
 
 		return employeeService.register(employeePojo);
-
 	}
+	
+	// http://localhost:5555/api/employee
+	@PostMapping("employee/login")
+	public EmployeePojo login(EmployeePojo employeePojo) throws ApplicationException{
+		return employeeService.login(employeePojo);
+	}
+	
 
 }

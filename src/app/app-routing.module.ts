@@ -6,7 +6,7 @@ import { DenyPendingReimbursementsComponent } from './pending-reimbursements/den
 import { ViewPendingReimbursementsComponent } from './pending-reimbursements/view-pending-reimbursements/view-pending-reimbursements.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
 import { ViewEmployeeReimbursementComponent } from './employee/view-employee-reimbursement/view-employee-reimbursement.component';
-import { LoginComponent} from './login/login.component';
+import { LoginComponent} from './users/login/login.component';
 
 
 const routes: Routes = [
