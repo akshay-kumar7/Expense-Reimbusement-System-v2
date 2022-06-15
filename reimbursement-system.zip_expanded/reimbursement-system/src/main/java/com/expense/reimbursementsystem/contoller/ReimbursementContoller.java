@@ -24,7 +24,7 @@ public class ReimbursementContoller {
 	@Autowired
 	ReimbursementService reimbursementService;
 
-	@GetMapping("reimbusrement/{eID}")
+	@GetMapping("/{eID}")
 	public List<ReimbursementPojo> viewEmployeeRequests(@PathVariable("eID") int employeeId)
 			throws ApplicationException {
 		return reimbursementService.viewEmployeeRequests(employeeId);
