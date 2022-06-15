@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PendingReimbursementsService } from 'src/app/pending-reimbursements/pending-reimbursements.service';
-import { Employee } from '../../employee/employee.model';
-import { EmployeeService } from '../../employee/employee.service';
 import { Reimbursement } from '../reimbursement.model';
+import { ReimbursementsService } from '../reimbursements.service';
 
 @Component({
   selector: 'view-employee-reimbursement',
@@ -14,9 +12,18 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
 
   viewEmployeeReimbursement: Reimbursement[];
 
+  displayEmployeeReimbursement : Reimbursement = {
+    reimbursementId: 0,
+    employeeId: 0,
+    managerId: 0,
+    status: '',
+    amount: 0,
+    reason: ''
+  }
+
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private reimbursementService: PendingReimbursementsService) {
+    private reimbursementService: ReimbursementsService) {
       this.viewEmployeeReimbursement = [];
   }
 
@@ -25,6 +32,13 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
     // this.reimbursementService.viewEmployeeRequests(eIdParam).subscribe((response) => {
       // this.displayReimbursement = response;
     // });
+    this.loadData();
+  }
+
+  loadData() {
+    this.reimbursementService.getEmployeeReimbursement().subscribe(response => {
+      this.
+    })
   }
 
 

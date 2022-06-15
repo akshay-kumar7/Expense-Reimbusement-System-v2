@@ -31,5 +31,9 @@ export class ReimbursementsService {
 
     return this.http.get<Reimbursement[]>(this.baseUrl + "/status" + "/Deny");
   }
+
+  getEmployeeReimbursement(employeeId : number) : Observable<Reimbursement[]> {
+    return this.http.get<Reimbursement[]>(this.baseUrl + '/' + employeeId);
+  }
 }
 
