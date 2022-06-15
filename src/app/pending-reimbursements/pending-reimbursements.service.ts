@@ -14,7 +14,7 @@ export class PendingReimbursementsService {
 
   getAllPendingReimbursements(): Observable<Reimbursement[]>{
 
-    return this.http.get<Reimbursement[]>(this.baseUrl);
+    return this.http.get<Reimbursement[]>(this.baseUrl + "/status" + "/pending");
 
   }
 
