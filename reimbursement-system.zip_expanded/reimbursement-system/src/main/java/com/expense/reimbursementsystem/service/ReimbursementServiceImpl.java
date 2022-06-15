@@ -1,4 +1,4 @@
-package com.expense.reimbursementsystem.service;	
+package com.expense.reimbursementsystem.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,19 +13,14 @@ import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 
 @Service
-public class ReimbursementServiceImpl implements ReimbursementService{
+public class ReimbursementServiceImpl implements ReimbursementService {
 
-	
 	@Autowired
 	ReimbursementDao reimbursementDao;
 
-	
 	@Override
 	public List<ReimbursementPojo> getReimbursementsByStatus(String status) throws ApplicationException {
-		// TODO Auto-generated method stub
 		List<ReimbursementEntity> allReimbursementsEntity = reimbursementDao.findReimbursementByStatus(status);
-		// now we have to copy each book entity object in the collection to a collection on book pojo
-		// create a empty collection of book pojo
 		List<ReimbursementPojo> allReimbursementsPojo = new ArrayList<ReimbursementPojo>();
 		for(ReimbursementEntity fetchedReimbursementEntity: allReimbursementsEntity) {
 			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(fetchedReimbursementEntity.getReimbursementId(), fetchedReimbursementEntity.getEmployeeId(), 
@@ -48,12 +43,18 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 
 	@Override
 	public List<ReimbursementPojo> viewEmployeeRequests(int employeeId) throws ApplicationException {
-		Optional<ReimbursementEntity> reimbursementEntityOpt = reimbursementDao.findById(employeeId);
+		List<ReimbursementEntity> employeeReimbursementEntity = reimbursementDao.findReimbursementByEmployeeId(employeeId);
 		List<ReimbursementPojo> reimbursementPojo = new ArrayList<ReimbursementPojo>();
-		if(reimbursementEntityOpt.isPresent()) {
-			List<ReimbursementEntity> reimbursementEntity = new ArrayList<ReimbursementEntity>();
-			reimbursementEntity.add(reimbursementEntityOpt.get());
-			BeanUtils.copyProperties(reimbursementEntity, reimbursementPojo);
+		
+		for(ReimbursementEntity fetchedReimbursementEntity : employeeReimbursementEntity) {
+			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(
+					fetchedReimbursementEntity.getReimbursementId(),
+					fetchedReimbursementEntity.getEmployeeId(),
+					fetchedReimbursementEntity.getManagerId(),
+					fetchedReimbursementEntity.getStatus(),
+					fetchedReimbursementEntity.getAmount(),
+					fetchedReimbursementEntity.getReason());
+			reimbursementPojo.add(returnReimbursementPojo);
 		}
 		return reimbursementPojo;
 	}
