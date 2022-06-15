@@ -3,7 +3,7 @@
         <div class="col-1">
         </div>
         <div class="col-10">
-            <h2>View Employee Request</h2>
+            <h2>View All Employees</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -16,22 +16,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr *ngFor="let employee of viewAllEmployees"> -->
-                    <tr>
-                        <!-- <td>{{ employee.employeeId }}</td>
+                    <tr *ngFor="let employee of viewAllEmployees">
+                        <td>{{ employee.employeeId }}</td>
                         <td>{{ employee.managerId}}</td>
                         <td>{{ employee.firstName }}</td>
                         <td>{{ employee.lastName }}</td>
-                        <td>{{ employee.email }}</td> -->
-
-                        <!-- ONLY FOR TESTING PURPOSES -->
-                        <td> {{ employeeTest.employeeId}}</td>
-                        <td> {{ employeeTest.managerId}}</td>
-                        <td> {{ employeeTest.firstName}}</td>
-                        <td> {{ employeeTest.lastName}}</td>
-                        <td> {{ employeeTest.email}}</td>
+                        <td>{{ employee.email }}</td>
                         <td>
-                            <button type="button" class="btn btn-danger">Reimbursement
+                            <button 
+                                type="button" 
+                                class="btn btn-success"
+                                (click)="goToReimbursement()">View Reimbursement
                             </button>
                         </td>
                     </tr>
