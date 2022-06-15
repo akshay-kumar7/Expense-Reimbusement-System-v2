@@ -17,7 +17,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let employee of viewAllEmployees">
-                    <tr>
                         <td>{{ employee.employeeId }}</td>
                         <td>{{ employee.managerId}}</td>
                         <td>{{ employee.firstName }}</td>
@@ -26,8 +25,8 @@
                         <td>
                             <button 
                                 type="button" 
-                                class="btn btn-success">View Employee Reimbursement
-                                <!-- (click)="viewReimbursement()" -->
+                                class="btn btn-success"
+                                (click)="goToReimbursement()">View Reimbursement
                             </button>
                         </td>
                     </tr>

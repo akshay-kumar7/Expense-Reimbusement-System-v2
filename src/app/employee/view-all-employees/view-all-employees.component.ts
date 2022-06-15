@@ -22,8 +22,7 @@ export class ViewAllEmployeesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // viewReimbursement(employeeId : number) {
-  //   this.router.navigate(['view-employee-reimbursement', employeeId]);
-  // }
-
+  goToReimbursement(employeeId : number) {
+    this.router.navigate(['view-employee-reimbursement', employeeId])
+  }
 }

@@ -5,9 +5,9 @@ import { ViewUpdateInformationComponent } from './employee/view-update-informati
 // import { DenyPendingReimbursementsComponent } from './pending-reimbursements/deny-pending-reimbursements/deny-pending-reimbursements.component';
 import { ViewPendingReimbursementsComponent } from './pending-reimbursements/view-pending-reimbursements/view-pending-reimbursements.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
-import { ViewEmployeeReimbursementComponent } from './employee/view-employee-reimbursement/view-employee-reimbursement.component';
 import { LoginComponent} from './login/login.component';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 
 
 const routes: Routes = [
