@@ -31,7 +31,6 @@ public class EmployeeContoller {
 	// http://localhost:5555/api/employee
 	@PostMapping("employee")
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
-
 		return employeeService.register(employeePojo);
 
 	}
