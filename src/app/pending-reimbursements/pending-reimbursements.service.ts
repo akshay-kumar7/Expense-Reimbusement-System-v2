@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PendingReimbursementsService {
 
-  baseUrl: string = "http://localhost:7474/reimbursement";
+  baseUrl: string = "http://localhost:5555/api/reimbursement";
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +20,9 @@ export class PendingReimbursementsService {
 
   approveReimbursement(currentReimbursement: Reimbursement): Observable<Reimbursement>{
     return this.http.post<Reimbursement>(this.baseUrl+'/changestatus', currentReimbursement);
+  }
+
+  submitReimbursement(newReimbursement: Reimbursement): Observable<Reimbursement>{
+    return this.http.post<Reimbursement>(this.baseUrl, newReimbursement);
   }
 }
