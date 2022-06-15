@@ -13,6 +13,6 @@ import com.expense.reimbursementsystem.pojo.EmployeePojo;
 public interface EmployeeDao extends JpaRepository<EmployeeEntity, Integer> {
 	
 	//Custom Finder for Login
-	List<EmployeeEntity> findByEmailAndPassword(String email, String password);
+	EmployeeEntity findByEmailAndPassword(String email, String password);
 
 }

@@ -43,6 +43,7 @@ public class EmployeeController {
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
 
 		return employeeService.register(employeePojo);
+	}
 
 	public ReimbursementPojo submitReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException {
 		return reimbursementService.submitInfo(reimbursementPojo);
