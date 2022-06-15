@@ -13,7 +13,11 @@ export class PendingReimbursementsService {
   constructor(private http: HttpClient) { }
 
   getAllPendingReimbursements(): Observable<Reimbursement[]>{
+
+
+    return this.http.get<Reimbursement[]>(this.baseUrl + "/status" + "/pending");
     return this.http.get<Reimbursement[]>(this.baseUrl);
+
 
   }
 
