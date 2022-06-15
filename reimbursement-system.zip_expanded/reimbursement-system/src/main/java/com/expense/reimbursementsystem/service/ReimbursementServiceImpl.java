@@ -26,8 +26,13 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		// create a empty collection of book pojo
 		List<ReimbursementPojo> allReimbursementsPojo = new ArrayList<ReimbursementPojo>();
 		for(ReimbursementEntity fetchedReimbursementEntity: allReimbursementsEntity) {
-			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(fetchedReimbursementEntity.getReimbursementId(), fetchedReimbursementEntity.getEmployeeId(), 
-					fetchedReimbursementEntity.getManagerId(), fetchedReimbursementEntity.getStatus(), fetchedReimbursementEntity.getAmount(), fetchedReimbursementEntity.getReason());
+			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(
+					fetchedReimbursementEntity.getReimbursementId(), 
+					fetchedReimbursementEntity.getEmployeeId(), 
+					fetchedReimbursementEntity.getManagerId(), 
+					fetchedReimbursementEntity.getStatus(), 
+					fetchedReimbursementEntity.getAmount(), 
+					fetchedReimbursementEntity.getReason());
 			allReimbursementsPojo.add(returnReimbursementPojo);
 		}
 		return allReimbursementsPojo;
@@ -59,6 +64,13 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 					fetchedReimbursementEntity.getReason());
 			reimbursementPojo.add(returnReimbursementPojo);
 		}
+//		if(reimbursementEntityOpt.isPresent()) {
+//			List<ReimbursementEntity> reimbursementEntity = new ArrayList<ReimbursementEntity>();
+//			ReimbursementEntity fetchedReimbursementEntity = reimbursementEntityOpt.get();
+//			reimbursementEntity.add(fetchedReimbursementEntity);
+//			
+//			BeanUtils.copyProperties(reimbursementEntity, reimbursementPojo);
+//		}
 		return reimbursementPojo;
 	}
 
@@ -104,5 +116,4 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		return reimbursementPojo;
 	}
 
-}
 }
