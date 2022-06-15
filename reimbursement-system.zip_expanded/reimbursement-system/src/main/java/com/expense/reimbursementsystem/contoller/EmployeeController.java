@@ -29,24 +29,11 @@ public class EmployeeController {
 	public List<EmployeePojo> getAllEmployees() throws ApplicationException {
 		return employeeService.getAllEmployees();
 	}
-
-	// http://localhost:5555/api/employee
-//	@PostMapping("employee")
-//	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
-//
-//		return employeeService.register(employeePojo);
-//
-//	}
+	
 	
 	@PostMapping("employee")
-
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
-
 		return employeeService.register(employeePojo);
-	}
-
-	public ReimbursementPojo submitReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException {
-		return reimbursementService.submitInfo(reimbursementPojo);
 	}
 	
 	// http://localhost:5555/api/employee
