@@ -15,6 +15,18 @@ public class EmployeePojo {
 		super();
 	}
 
+	public EmployeePojo(int managerId, String firstName, String lastName, String email, String userName,
+			String password, boolean managerType) {
+		super();
+		this.managerId = managerId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+		this.managerType = managerType;
+	}
+
 	public EmployeePojo(int employeeId, int managerId, String firstName, String lastName, String email, String userName,
 			String password, boolean managerType) {
 		super();
