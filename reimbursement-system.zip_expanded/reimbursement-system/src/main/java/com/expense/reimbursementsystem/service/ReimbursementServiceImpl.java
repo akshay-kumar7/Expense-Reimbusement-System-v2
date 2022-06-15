@@ -20,19 +20,11 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 
 	@Override
 	public List<ReimbursementPojo> getReimbursementsByStatus(String status) throws ApplicationException {
-		// TODO Auto-generated method stub
 		List<ReimbursementEntity> allReimbursementsEntity = reimbursementDao.findReimbursementByStatus(status);
-		// now we have to copy each book entity object in the collection to a collection on book pojo
-		// create a empty collection of book pojo
 		List<ReimbursementPojo> allReimbursementsPojo = new ArrayList<ReimbursementPojo>();
 		for(ReimbursementEntity fetchedReimbursementEntity: allReimbursementsEntity) {
-			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(
-					fetchedReimbursementEntity.getReimbursementId(), 
-					fetchedReimbursementEntity.getEmployeeId(), 
-					fetchedReimbursementEntity.getManagerId(), 
-					fetchedReimbursementEntity.getStatus(), 
-					fetchedReimbursementEntity.getAmount(), 
-					fetchedReimbursementEntity.getReason());
+			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(fetchedReimbursementEntity.getReimbursementId(), fetchedReimbursementEntity.getEmployeeId(), 
+					fetchedReimbursementEntity.getManagerId(), fetchedReimbursementEntity.getStatus(), fetchedReimbursementEntity.getAmount(), fetchedReimbursementEntity.getReason());
 			allReimbursementsPojo.add(returnReimbursementPojo);
 		}
 		return allReimbursementsPojo;
@@ -64,13 +56,6 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 					fetchedReimbursementEntity.getReason());
 			reimbursementPojo.add(returnReimbursementPojo);
 		}
-//		if(reimbursementEntityOpt.isPresent()) {
-//			List<ReimbursementEntity> reimbursementEntity = new ArrayList<ReimbursementEntity>();
-//			ReimbursementEntity fetchedReimbursementEntity = reimbursementEntityOpt.get();
-//			reimbursementEntity.add(fetchedReimbursementEntity);
-//			
-//			BeanUtils.copyProperties(reimbursementEntity, reimbursementPojo);
-//		}
 		return reimbursementPojo;
 	}
 
