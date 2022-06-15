@@ -31,7 +31,7 @@ public class ReimbursementContoller {
 	// http://localhost:7474/reimbursement/status/pending
 	// or
 	// http://localhost:7474/reimbursement/status/approve
-	@GetMapping("reimbursement/status/{status}")
+	@GetMapping("status/{status}")
 	public List<ReimbursementPojo> getReimbursementsByStatus(@PathVariable("status") String status)
 			throws ApplicationException {
 		return reimbursementService.getReimbursementsByStatus(status);
@@ -41,5 +41,11 @@ public class ReimbursementContoller {
 	public ReimbursementPojo submitReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException {
 		return reimbursementService.submitInfo(reimbursementPojo);
 	}
+  
+  @PutMapping("changestatus")
+	public ReimbursementPojo updateReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException{
+		return reimbursementService.updateReimbursement(reimbursementPojo);
+	}
+
 
 }
