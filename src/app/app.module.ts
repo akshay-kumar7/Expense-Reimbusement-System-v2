@@ -20,9 +20,10 @@ import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/vie
     HeaderComponent,
     ViewPendingReimbursementsComponent,
     ViewUpdateInformationComponent,
-    ViewEmployeeReimbursementComponent,
+    ViewResolvedReimbursementsComponent,
     ViewAllEmployeesComponent,
-    ViewResolvedReimbursementsComponent
+    ViewResolvedReimbursementsComponent,
+    ViewEmployeeReimbursementComponent
   ],
   imports: [
     BrowserModule,
