@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
-import { reimbursement } from '../pending-reimbursements/reimbursement.model';
+import { Reimbursement } from '../pending-reimbursements/reimbursement.model';
 import { Employee } from './employee.model';
 
 @Injectable({
@@ -17,8 +17,8 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.baseUrl);
   }
 
-  viewEmployeeRequests(employeeId : any) : Observable<reimbursement[]> {
-    return this.http.get<reimbursement[]>(this.baseUrl + '/' + employeeId);
+  viewEmployeeRequests(employeeId : any) : Observable<Reimbursement[]> {
+    return this.http.get<Reimbursement[]>(this.baseUrl + '/' + employeeId);
   }
 
 

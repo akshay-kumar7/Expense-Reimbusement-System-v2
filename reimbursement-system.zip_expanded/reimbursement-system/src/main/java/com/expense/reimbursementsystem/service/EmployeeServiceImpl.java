@@ -67,17 +67,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return allEmployeePojo;
 	}
 
-//	@Override
-//	public EmployeePojo register(EmployeePojo employeePojo) throws ApplicationException {
-//		
-//		EmployeeEntity employeeEntity = new EmployeeEntity();
-//		BeanUtils.copyProperties(employeePojo, employeeEntity);
-//		
-//		EmployeeEntity returnedEmployeeEntity =  employeeDao.saveAndFlush(employeeEntity);
-//		
-//		employeePojo.setEmployeeId(returnedEmployeeEntity.getEmployeeId());
-//		return employeePojo;
-//	}
+
+	@Override
+	public EmployeePojo register(EmployeePojo employeePojo) throws ApplicationException {
+		
+		EmployeeEntity employeeEntity = new EmployeeEntity();
+		BeanUtils.copyProperties(employeePojo, employeeEntity);
+		
+		EmployeeEntity returnedEmployeeEntity =  employeeDao.saveAndFlush(employeeEntity);
+		
+		employeePojo.setEmployeeId(returnedEmployeeEntity.getEmployeeId());
+		return employeePojo;
+	}
 
 
 }
