@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PendingReimbursementsService } from 'src/app/pending-reimbursements/pending-reimbursements.service';
 import { Employee } from '../../employee/employee.model';
 import { EmployeeService } from '../../employee/employee.service';
 import { Reimbursement } from '../reimbursement.model';
+import { ReimbursementsService } from '../reimbursements.service';
 
 @Component({
   selector: 'view-employee-reimbursement',
@@ -16,7 +16,7 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private reimbursementService: PendingReimbursementsService) {
+    private reimbursementService: ReimbursementsService) {
       this.viewEmployeeReimbursement = [];
   }
 
