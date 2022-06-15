@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 import com.expense.reimbursementsystem.service.ReimbursementService;
@@ -22,7 +24,7 @@ public class ReimbursementContoller {
 	@Autowired
 	ReimbursementService reimbursementService;
 
-	@GetMapping("reimbusrement/{eID}")
+	@GetMapping("/{eID}")
 	public List<ReimbursementPojo> viewEmployeeRequests(@PathVariable("eID") int employeeId)
 			throws ApplicationException {
 		return reimbursementService.viewEmployeeRequests(employeeId);
@@ -42,7 +44,7 @@ public class ReimbursementContoller {
 		return reimbursementService.submitInfo(reimbursementPojo);
 	}
   
-  @PutMapping("changestatus")
+	@PutMapping("changestatus")
 	public ReimbursementPojo updateReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException{
 		return reimbursementService.updateReimbursement(reimbursementPojo);
 	}
