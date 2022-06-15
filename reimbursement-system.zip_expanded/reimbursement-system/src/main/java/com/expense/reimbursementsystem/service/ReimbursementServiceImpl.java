@@ -1,4 +1,4 @@
-package com.expense.reimbursementsystem.service;	
+package com.expense.reimbursementsystem.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,11 @@ import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 
 @Service
-public class ReimbursementServiceImpl implements ReimbursementService{
+public class ReimbursementServiceImpl implements ReimbursementService {
 
-	
 	@Autowired
 	ReimbursementDao reimbursementDao;
 
-	
 	@Override
 	public List<ReimbursementPojo> getReimbursementsByStatus(String status) throws ApplicationException {
 		// TODO Auto-generated method stub
@@ -106,4 +104,5 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 		return reimbursementPojo;
 	}
 
+}
 }
