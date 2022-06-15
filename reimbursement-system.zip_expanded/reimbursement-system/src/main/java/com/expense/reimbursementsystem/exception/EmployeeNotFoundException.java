@@ -14,7 +14,7 @@ public class EmployeeNotFoundException extends Exception {
 		//return "Employee Not Found";
 	
 		return "Employee with id: " + employeeId + "";
-		return null;
+
 	}
 
 }
