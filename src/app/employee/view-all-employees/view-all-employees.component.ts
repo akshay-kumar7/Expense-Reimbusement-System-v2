@@ -14,20 +14,6 @@ export class ViewAllEmployeesComponent implements OnInit {
 
   viewAllEmployees: Employee[];
 
-  // ONLY FOR TESTING PURPOSES
-  // employeeTest: Employee =
-  //   {
-  //     employeeId: 1,
-  //     managerId: 1,
-  //     firstName: 'john',
-  //     lastName: 'smith',
-  //     email: 'jsmith@gmail.com',
-  //     userName: 'jsmith',
-  //     password: '123',
-  //     managerType: true
-  //   };
-
-
   constructor(private router: Router,
     private employeeService : EmployeeService) {
       this.viewAllEmployees = [];
