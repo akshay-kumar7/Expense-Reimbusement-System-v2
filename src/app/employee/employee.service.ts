@@ -1,9 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+import { Reimbursement } from '../pending-reimbursements/reimbursement.model';
+import { Employee } from './employee.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
+  
+  // fakeServer : string = "http://localhost:3004"
+  baseUrl : string = "http://localhost:7474/employees"
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  getAllEmployees() : Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.baseUrl);
+  }
+
+  viewEmployeeRequests(employeeId : any) : Observable<Reimbursement[]> {
+    return this.http.get<Reimbursement[]>(this.baseUrl + '/' + employeeId);
+  }
+
+
 }

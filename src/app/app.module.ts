@@ -9,8 +9,9 @@ import { ViewPendingReimbursementsComponent } from './pending-reimbursements/vie
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
-import { ViewEmployeeReimbursementComponent } from './employee/view-employee-reimbursement/view-employee-reimbursement.component';
+import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
+import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-al
     ViewPendingReimbursementsComponent,
     ViewUpdateInformationComponent,
     ViewEmployeeReimbursementComponent,
-    ViewAllEmployeesComponent
+    ViewAllEmployeesComponent,
+    SubmitReimbursementComponent
   ],
   imports: [
     BrowserModule,
