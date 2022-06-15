@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PendingReimbursementsService } from '../pending-reimbursements.service';
+import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursement } from '../reimbursement.model';
 
 @Component({
@@ -21,7 +21,7 @@ export class ViewPendingReimbursementsComponent implements OnInit {
     reason: ''
   }
 
-  constructor(private pendingReimbursementsService: PendingReimbursementsService,
+  constructor(private ReimbursementsService: ReimbursementsService,
               private router: Router) {
   this.currentAllPendingReimbursements = [];
 }
@@ -32,7 +32,7 @@ export class ViewPendingReimbursementsComponent implements OnInit {
   }
 
   loadData(){
-    this.pendingReimbursementsService.getAllPendingReimbursements().subscribe(response => {
+    this.ReimbursementsService.getAllPendingReimbursements().subscribe(response => {
       console.log(response);
       this.currentAllPendingReimbursements = response;
     })
@@ -47,7 +47,7 @@ export class ViewPendingReimbursementsComponent implements OnInit {
         amount,
         reason
       }
-      this.pendingReimbursementsService.approveReimbursement(this.currentReimbursement).subscribe((response)=>{
+      this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe((response)=>{
         console.log(response);
 
         this.loadData();
@@ -57,7 +57,19 @@ export class ViewPendingReimbursementsComponent implements OnInit {
   }
 
   denyRequestStatus(reimbursementId: number, employeeId: number, managerId: number, amount: number, reason: string){
+    this.currentReimbursement = {
+      reimbursementId,
+      employeeId,
+      managerId,
+      status: 'Deny',
+      amount,
+      reason
+    }
+    this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe((response)=>{
+      console.log(response);
 
+      this.loadData();
+    })
   }
 
 }

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PendingReimbursementsService } from './pending-reimbursements.service';
+import { ReimbursementsService } from './reimbursements.service';
 
 describe('PendingReimbursementsService', () => {
-  let service: PendingReimbursementsService;
+  let service: ReimbursementsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PendingReimbursementsService);
+    service = TestBed.inject(ReimbursementsService);
   });
 
   it('should be created', () => {
