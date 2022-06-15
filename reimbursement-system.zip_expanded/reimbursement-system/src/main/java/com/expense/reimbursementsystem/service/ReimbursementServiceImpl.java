@@ -33,9 +33,9 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 			allReimbursementsPojo.add(returnReimbursementPojo);
 		}
 		return allReimbursementsPojo;
+
 	}
-	
-	
+
 	public ReimbursementServiceImpl() {
 		super();
 	}
@@ -87,6 +87,16 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 		ReimbursementEntity reimbursementEntity = new ReimbursementEntity();
 		BeanUtils.copyProperties(reimbursementPojo, reimbursementEntity);
 		ReimbursementEntity returnedReimbursementEntity = reimbursementDao.save(reimbursementEntity);
+		return reimbursementPojo;
+	}
+
+
+	@Override
+	public ReimbursementPojo updateReimbursement(ReimbursementPojo reimbursementPojo) throws ApplicationException {
+		ReimbursementEntity reimbursementEntity = new ReimbursementEntity();
+		BeanUtils.copyProperties(reimbursementPojo, reimbursementEntity);
+		ReimbursementEntity returnedReimbursementEntity = reimbursementDao.save(reimbursementEntity);
+		
 		return reimbursementPojo;
 	}
 

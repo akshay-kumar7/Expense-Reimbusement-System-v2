@@ -51,7 +51,7 @@ public class EmployeeController {
 	
 	// http://localhost:5555/api/employee
 	@PostMapping("employee/login")
-	public EmployeePojo login(EmployeePojo employeePojo) throws ApplicationException{
+	public EmployeePojo login(@RequestBody EmployeePojo employeePojo) throws ApplicationException{
 		return employeeService.login(employeePojo);
 	}
 	

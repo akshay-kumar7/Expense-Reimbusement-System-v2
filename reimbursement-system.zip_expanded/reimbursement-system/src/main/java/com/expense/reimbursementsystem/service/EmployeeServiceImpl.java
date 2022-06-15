@@ -20,20 +20,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeePojo login(EmployeePojo employeePojo) throws ApplicationException {
-		EmployeeEntity employeeEntityLogin = employeeDao.findByEmailAndPassword(employeePojo.getEmail(),
+		System.out.println("POJO" + employeePojo);
+		List<EmployeeEntity> employeeEntityLogin = employeeDao.findByEmailAndPassword(employeePojo.getEmail(),
 				employeePojo.getPassword());
-		System.out.println(employeeEntityLogin);
-		//EmployeePojo loginEmployeePojo = null;
+		System.out.println("Login user: " +employeeEntityLogin);
+		EmployeePojo loginEmployeePojo = null;
 		//List<EmployeePojo> loginEmployee = new ArrayList<EmployeePojo>();
-		//for(EmployeeEntity fetchedEmployeeEntity : employeeEntityLogin) {
-		EmployeeEntity fetchedEmployeeEntity = employeeEntityLogin;
+		for(EmployeeEntity fetchedEmployeeEntity : employeeEntityLogin) {
+		//EmployeeEntity fetchedEmployeeEntity = employeeEntityLogin;
 			EmployeePojo loginEmployeePojoDetails = new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(), fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
 					fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
 					fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
 					fetchedEmployeeEntity.isManagerType());
 			//loginEmployee.add(loginEmployeePojoDetails);
-			//loginEmployeePojo = loginEmployeePojoDetails;
-		
+			loginEmployeePojo = loginEmployeePojoDetails;
+		}
 		
 //		if (employeeEntityLogin.isPresent()) {
 //			EmployeeEntity loginEmployeeEntity = employeeEntityLogin.get();
@@ -41,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 //		loginEmployeePojo = new EmployeePojo();
 //		BeanUtils.copyProperties(loginEmployeeDetails, loginEmployeePojo);
 //		}
-		return loginEmployeePojoDetails;
+		return loginEmployeePojo;
 	}
 	
 
