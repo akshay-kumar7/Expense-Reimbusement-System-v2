@@ -11,5 +11,7 @@ import com.expense.reimbursementsystem.entity.ReimbursementEntity;
 public interface ReimbursementDao extends JpaRepository<ReimbursementEntity, Integer>{
 	
 	List<ReimbursementEntity> findReimbursementByStatus(String status);
+	
+	List<ReimbursementEntity> findReimbursementByEmployeeId(int employeeId);
 
 }
