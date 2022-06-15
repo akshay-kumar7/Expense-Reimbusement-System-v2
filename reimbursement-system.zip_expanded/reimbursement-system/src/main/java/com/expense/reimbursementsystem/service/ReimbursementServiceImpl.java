@@ -30,13 +30,14 @@ public class ReimbursementServiceImpl implements ReimbursementService{
 	@Override
 	public List<ReimbursementPojo> viewEmployeeRequests(int employeeId) throws ApplicationException {
 		
-//		Optional<ReimbursementEntity> reimbursementEntityOpt = reimbursementDao.findById(employeeId);
-//		List<ReimbursementPojo> reimbursementPojo = new ArrayList<ReimbursementPojo>();
-//		if(reimbursementEntityOpt.isPresent()) {
-//			List<ReimbursementEntity> fetchedReimbursementEntity = reimbursementEntityOpt.get();
-//			BeanUtils.copyProperties(fetchedReimbursementEntity, reimbursementPojo);
-//		}
-		return null;
+		Optional<ReimbursementEntity> reimbursementEntityOpt = reimbursementDao.findById(employeeId);
+		List<ReimbursementPojo> reimbursementPojo = new ArrayList<ReimbursementPojo>();
+		if(reimbursementEntityOpt.isPresent()) {
+			List<ReimbursementEntity> reimbursementEntity = new ArrayList<ReimbursementEntity>();
+			reimbursementEntity.add(reimbursementEntityOpt.get());
+			BeanUtils.copyProperties(reimbursementEntity, reimbursementPojo);
+		}
+		return reimbursementPojo;
 	}
 
 	@Override
