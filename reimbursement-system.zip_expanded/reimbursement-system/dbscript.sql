@@ -44,3 +44,7 @@ VALUES(2, 1, 'Pending', 500.00, 'Travel Expenses');
 INSERT INTO reimbursement(employee_id, manager_id, status, amount, reason)
 VALUES(24, 1, 'Approve', 300.00, 'Meal Expenses');
 
+
+--QUERIES
+SELECT * FROM employee;
+SELECT * FROM reimbursement;
