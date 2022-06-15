@@ -14,7 +14,10 @@ export class PendingReimbursementsService {
 
   getAllPendingReimbursements(): Observable<Reimbursement[]>{
 
+
+    return this.http.get<Reimbursement[]>(this.baseUrl + "/status" + "/pending");
     return this.http.get<Reimbursement[]>(this.baseUrl);
+
 
   }
 
@@ -22,7 +25,9 @@ export class PendingReimbursementsService {
     return this.http.post<Reimbursement>(this.baseUrl+'/changestatus', currentReimbursement);
   }
 
-  submitReimbursement(newReimbursement: Reimbursement): Observable<Reimbursement>{
-    return this.http.post<Reimbursement>(this.baseUrl, newReimbursement);
-  }
+  // viewEmployeeRequests(employeeReimbursement : Reimbursement) : Observable<Reimbursement> {
+  //   return this.http.get<Reimbursement>(this.baseUrl + )
+  // }
+
+
 }
