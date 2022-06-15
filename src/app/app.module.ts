@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
-import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { SubmitReimbursementComponent } from './pending-reimbursements/submit-re
     ViewUpdateInformationComponent,
     ViewEmployeeReimbursementComponent,
     ViewAllEmployeesComponent,
-    SubmitReimbursementComponent
+    ViewResolvedReimbursementsComponent
   ],
   imports: [
     BrowserModule,
