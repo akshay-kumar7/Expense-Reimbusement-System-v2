@@ -20,6 +20,14 @@ export class ViewAllEmployeesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData() {
+    this.employeeService.getAllEmployees().subscribe((response) => {
+      console.log(response);
+      this.viewAllEmployees = response;
+    });
   }
 
   goToReimbursement(employeeId : number) {

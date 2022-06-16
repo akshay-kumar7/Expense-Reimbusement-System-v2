@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
 import { NgForm } from '@angular/forms';
+import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +22,12 @@ export class LoginComponent implements OnInit {
     email: '',
     userName: '',
     password: '',
-    managerType: 
+    managerType: false
   }
 
-  constructor() { }
+  constructor(private userService: UsersService,
+              private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,22 +35,22 @@ export class LoginComponent implements OnInit {
   loginValidation(){
     this.userService.validateUser(this.user).subscribe((response)=>{
       console.log(response);
-      if(response.role != "" ){
+      if(response.employeeId != 0 ){
         //login success
         // send the respone to auth service and store the info in the session storage
         this.authService.storeUserInfo(response);
         // also set the isLoggedIn varibale of auth service to true
         this.authService.isLoggedIn = true;
-        if(response.role == "admin"){
+        if(response.managerType == true){
             //set the role to admin in auth service
-            this.authService.role="admin";
+            this.authService.managerType="true";
             // route to view-http-book
-            this.router.navigate(['view-http-books']);
-        }else if(response.role == "employee"){
+            this.router.navigate(['view-all-employees']);
+        }else if(response.managerType == false){
             //set the role to employee in auth service
-            this.authService.role="employee";
+            this.authService.managerType="false";
             // route to display component
-            this.router.navigate(['display']);
+            this.router.navigate(['view-update-information']);
         }
       }else{
         //login failed

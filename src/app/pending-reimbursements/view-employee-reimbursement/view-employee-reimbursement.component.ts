@@ -16,20 +16,15 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
-    private reimbursementService: ReimbursementsService) {
-      this.viewEmployeeReimbursement = [];
-  }
+    private reimbursementService: ReimbursementsService) { 
+ 
+         this.viewEmployeeReimbursement = [];
+    }
 
   ngOnInit(): void {
-    // let eIdParam = this.activatedRoute.snapshot.paramMap.get('eID');
-    // this.reimbursementService.viewEmployeeRequests(eIdParam).subscribe((response) => {
-      // this.displayReimbursement = response;
-    // });
+    let eIdParam = this.activatedRoute.snapshot.paramMap.get('eID');
+    this.reimbursementService.getEmployeeReimbursement(eIdParam).subscribe((response) => {
+      this.viewEmployeeReimbursement = response;
+    });
   }
-
-
-
-
-
-
 }
