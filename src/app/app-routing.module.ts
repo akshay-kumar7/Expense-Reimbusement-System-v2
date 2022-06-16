@@ -16,21 +16,11 @@ const routes: Routes = [
   { path: "view-pending-reimbursements", component: ViewPendingReimbursementsComponent, canActivate:[AuthenticationGuard]},
   { path: "view-update-information", component: ViewUpdateInformationComponent, canActivate:[AuthenticationGuard]},
   { path: "view-all-employees", component: ViewAllEmployeesComponent, canActivate:[AuthenticationGuard]},
-  { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-employee-reimbursement/:eID", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
   { path: "login", component: LoginComponent},
-<<<<<<< HEAD
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]},
   { path: "logout", component: LogoutComponent},
-<<<<<<< HEAD
   { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
-=======
->>>>>>> 014c78b960fd1d790ef833037061da4781845502
-  { path: "submit-reimbursement", component: SubmitReimbursementComponent}
-
-=======
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent},
-  { path: "view-resolved-reimbursements/:employeeId", component: ViewResolvedReimbursementsComponent}
->>>>>>> 9d8781de (pulling changes from main)
+  { path: "submit-reimbursement", component: SubmitReimbursementComponent},
 ];
 
 @NgModule({
