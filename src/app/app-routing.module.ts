@@ -6,13 +6,10 @@ import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-al
 import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
 import { LoginComponent } from './users/login/login.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
-<<<<<<< HEAD
 import { LogoutComponent } from './users/logout/logout.component';
 import { AuthenticationGuard } from './users/authentication.guard';
-=======
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
 
->>>>>>> bff5c6dc2795b933655321cbfab2625ee3d00015
 
 
 const routes: Routes = [
@@ -21,14 +18,14 @@ const routes: Routes = [
   { path: "view-all-employees", component: ViewAllEmployeesComponent, canActivate:[AuthenticationGuard]},
   { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
   { path: "login", component: LoginComponent},
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]},
+  { path: "logout", component: LogoutComponent},
 <<<<<<< HEAD
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]}
-  { path: "logout", component: LogoutComponent}
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
 =======
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent}
+>>>>>>> 014c78b960fd1d790ef833037061da4781845502
   { path: "submit-reimbursement", component: SubmitReimbursementComponent}
 
->>>>>>> bff5c6dc2795b933655321cbfab2625ee3d00015
 ];
 
 @NgModule({

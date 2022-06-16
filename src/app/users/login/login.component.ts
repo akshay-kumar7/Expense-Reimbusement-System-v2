@@ -45,12 +45,12 @@ export class LoginComponent implements OnInit {
             //set the role to admin in auth service
             this.authService.managerType="true";
             // route to view-http-book
-            this.router.navigate(['view-http-books']);
+            this.router.navigate(['view-all-employees']);
         }else if(response.managerType == false){
             //set the role to employee in auth service
             this.authService.managerType="false";
             // route to display component
-            this.router.navigate(['display']);
+            this.router.navigate(['view-update-information']);
         }
       }else{
         //login failed

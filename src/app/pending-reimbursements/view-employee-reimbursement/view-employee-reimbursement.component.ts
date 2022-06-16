@@ -17,8 +17,8 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private reimbursementService: ReimbursementsService) { 
-    private reimbursementService: ReimbursementsService) {
-      this.viewEmployeeReimbursement = [];
+ 
+         this.viewEmployeeReimbursement = [];
     }
 
   ngOnInit(): void {
@@ -27,9 +27,4 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
       this.viewEmployeeReimbursement = response;
     });
   }
-
-
-
-
-
 }
