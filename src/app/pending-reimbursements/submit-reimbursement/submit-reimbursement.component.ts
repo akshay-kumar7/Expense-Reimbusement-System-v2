@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PendingReimbursementsService } from '../pending-reimbursements.service';
+import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursement } from '../reimbursement.model';
 
 @Component({
@@ -22,7 +22,7 @@ export class SubmitReimbursementComponent implements OnInit {
     
   }
 
-  constructor(private pendingReimbursementsService: PendingReimbursementsService, private router: Router) {
+  constructor(private reimbursementsService: ReimbursementsService, private router: Router) {
 
     this.currentAllReimbursements = [];
    }
@@ -33,20 +33,31 @@ export class SubmitReimbursementComponent implements OnInit {
   }
 
   loadData(){
-    this.pendingReimbursementsService.getAllPendingReimbursements().subscribe(response => {
+    this.reimbursementsService.getAllPendingReimbursements().subscribe(response => {
       console.log(response);
       this.currentAllReimbursements = response;
     })
   }
 
   //     submitInfo() {
-  //     this.pendingReimbursementsService.submitReimbursement(this.newReimbursement).subscribe((response)=>
-      
-  //     this.loadData();
 
-  //     this.currentAllReimbursements
+  //       this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe((response)=>{
+
+  //         console.log(response);
+
+  //         this.loadData();
+
+  //       this.newReimbursement={
+  //         reimbursementId: 0,
+  //         employeeId: 0,
+  //         managerId:0,
+  //         status:'',
+  //         amount:0,
+  //         reason:''
+
+  //       };
       
-  //     )
+  //     })
   // }
 
 }
