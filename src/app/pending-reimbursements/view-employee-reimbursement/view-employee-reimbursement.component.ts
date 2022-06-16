@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reimbursement } from '../reimbursement.model';
 import { ReimbursementsService } from '../reimbursements.service';
@@ -11,14 +11,6 @@ import { ReimbursementsService } from '../reimbursements.service';
 export class ViewEmployeeReimbursementComponent implements OnInit {
 
   viewEmployeeReimbursement: Reimbursement[];
-  // = {
-  //   reimbursementId: 0,
-  //   employeeId: 0,
-  //   managerId: 0,
-  //   status: '',
-  //   amount: 0,
-  //   reason: ''
-  // };
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
