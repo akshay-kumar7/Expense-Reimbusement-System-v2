@@ -9,8 +9,7 @@ import { Employee } from './employee.model';
 })
 export class EmployeeService {
   
-  // fakeServer : string = "http://localhost:3004"
-  baseUrl : string = "http://localhost:7474/employees"
+  baseUrl : string = "http://localhost:5555/api/employee"
   constructor(private http: HttpClient) { }
 
   getAllEmployees() : Observable<Employee[]> {

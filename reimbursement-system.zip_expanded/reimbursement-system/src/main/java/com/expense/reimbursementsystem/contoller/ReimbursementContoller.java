@@ -24,15 +24,16 @@ public class ReimbursementContoller {
 	@Autowired
 	ReimbursementService reimbursementService;
 
+	// http://localhost:5555/reimbursement/2
 	@GetMapping("/{eID}")
 	public List<ReimbursementPojo> viewEmployeeRequests(@PathVariable("eID") int employeeId)
 			throws ApplicationException {
 		return reimbursementService.viewEmployeeRequests(employeeId);
 	}
 
-	// http://localhost:7474/reimbursement/status/pending
+	// http://localhost:5555/reimbursement/status/pending
 	// or
-	// http://localhost:7474/reimbursement/status/approve
+	// http://localhost:5555/reimbursement/status/approve
 	@GetMapping("status/{status}")
 	public List<ReimbursementPojo> getReimbursementsByStatus(@PathVariable("status") String status)
 			throws ApplicationException {

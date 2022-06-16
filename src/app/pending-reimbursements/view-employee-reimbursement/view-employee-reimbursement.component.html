@@ -3,7 +3,7 @@
         <div class="col-1">
         </div>
         <div class="col-10">
-            <h2>View All Employees</h2>
+            <h2>View Employee Reimbursement</h2>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -17,7 +17,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let reimbursement of viewEmployeeReimbursement">
-                    <tr>
                         <td>{{ reimbursement.reimbursementId }}</td>
                         <td>{{ reimbursement.employeeId }}</td>
                         <td>{{ reimbursement.managerId }}</td>
