@@ -12,6 +12,8 @@ import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-al
 import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
 import { LoginComponent } from './users/login/login.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
+import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/vie
     ViewAllEmployeesComponent,
     ViewResolvedReimbursementsComponent,
     ViewEmployeeReimbursementComponent
+    SubmitReimbursementComponent
   ],
   imports: [
     BrowserModule,

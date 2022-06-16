@@ -36,7 +36,10 @@ export class ReimbursementsService {
     return this.http.get<Reimbursement[]>(this.baseUrl + "/"+ employeeId);
   }
 
-  
+  submitNewReimbursement(): Observable<Reimbursement[]>{
+
+    return this.http.get<Reimbursement[]>(this.baseUrl+"/submitRequest");
+  }
 
 }
 
