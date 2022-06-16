@@ -9,6 +9,7 @@ import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/vie
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
 
 
+
 const routes: Routes = [
   { path: "view-pending-reimbursements", component: ViewPendingReimbursementsComponent},
   { path: "view-update-information", component: ViewUpdateInformationComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent},
   { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent}
   { path: "submit-reimbursement", component: SubmitReimbursementComponent}
+
 ];
 
 @NgModule({

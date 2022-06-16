@@ -24,14 +24,14 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	ReimbursementService reimbursementService;
 
-	// http://localhost:7878/api/employee
+	// http://localhost:5555/api/employee
 	@GetMapping("employee")
 	public List<EmployeePojo> getAllEmployees() throws ApplicationException {
 		return employeeService.getAllEmployees();
 	}
 	
 	
-	// http://localhost:7878/api/employee
+	// http://localhost:5555/api/employee
 	@PostMapping("employee")
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
 		return employeeService.register(employeePojo);

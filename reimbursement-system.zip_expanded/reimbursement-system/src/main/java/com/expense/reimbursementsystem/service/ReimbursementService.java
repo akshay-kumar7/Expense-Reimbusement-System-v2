@@ -8,7 +8,6 @@ import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 
-
 public interface ReimbursementService {
 
 	ReimbursementPojo submitRequest(ReimbursementPojo reimbursementPojo) throws ApplicationException;
@@ -29,7 +28,4 @@ public interface ReimbursementService {
 
 	ReimbursementPojo updateReimbursement(ReimbursementPojo reimbursementPojo) throws ApplicationException;
 }
-
-
-	
 
