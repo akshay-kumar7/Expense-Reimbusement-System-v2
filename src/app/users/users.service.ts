@@ -7,13 +7,12 @@ import { User } from './user.model';
   providedIn: 'root'
 })
 export class UsersService {
-  baseUrl: String = "http://localhost:5555/employee/login";
+  baseUrl: string = "http://localhost:5555/api/employee/login";
 
   constructor(private http: HttpClient) { }
 
   validateUser(user: User): Observable<User>{
 
-    return this.http.post<User>(this.baseUrl, user);
-
+   return this.http.post<User>(this.baseUrl, user);
   }
 }

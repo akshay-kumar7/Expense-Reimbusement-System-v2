@@ -6,15 +6,26 @@ import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-al
 import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
 import { LoginComponent } from './users/login/login.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
+import { LogoutComponent } from './users/logout/logout.component';
+import { AuthenticationGuard } from './users/authentication.guard';
+import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+
 
 
 const routes: Routes = [
-  { path: "view-pending-reimbursements", component: ViewPendingReimbursementsComponent},
-  { path: "view-update-information", component: ViewUpdateInformationComponent},
-  { path: "view-all-employees", component: ViewAllEmployeesComponent},
-  { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent},
+  { path: "view-pending-reimbursements", component: ViewPendingReimbursementsComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-update-information", component: ViewUpdateInformationComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-all-employees", component: ViewAllEmployeesComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
   { path: "login", component: LoginComponent},
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent}
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]},
+  { path: "logout", component: LogoutComponent},
+<<<<<<< HEAD
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
+=======
+>>>>>>> 014c78b960fd1d790ef833037061da4781845502
+  { path: "submit-reimbursement", component: SubmitReimbursementComponent}
+
 ];
 
 @NgModule({
