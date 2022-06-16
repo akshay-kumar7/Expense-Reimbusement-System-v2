@@ -7,20 +7,26 @@
           </button>
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='false'">
                 <a class="nav-link" routerLink="view-update-information">MyProfile</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='false'">
                 <a class="nav-link" routerLink="submit-reimbursement">Submit A Reimbursement</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='true'">
                 <a class="nav-link" routerLink="view-pending-reimbursements">Pending Reimbursements</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='true'">
                 <a class="nav-link" routerLink="view-resolved-reimbursements">Resolved Reimbursements</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='true'">
                 <a class="nav-link" routerLink="view-all-employees">View All Employees</a>
+              </li>
+              <li class="nav-item" *ngIf="!hasLoggedIn()">
+                <a class="nav-link" routerLink="login">Login</a>
+              </li>
+              <li class="nav-item" *ngIf="hasLoggedIn()">
+                <a class="nav-link" routerLink="logout">Logout</a>
               </li>
             </ul>
           </div>
