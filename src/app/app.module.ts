@@ -9,10 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
 import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
+<<<<<<< HEAD
 import { LoginComponent } from './users/login/login.component';
 import { LogoutComponent } from './users/logout/logout.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+=======
+
+import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
+import { LoginComponent } from './users/login/login.component';
+>>>>>>> 9d8781de (pulling changes from main)
 
 @NgModule({
   declarations: [
