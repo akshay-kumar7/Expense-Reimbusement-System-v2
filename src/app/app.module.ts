@@ -8,11 +8,16 @@ import { ViewPendingReimbursementsComponent } from './pending-reimbursements/vie
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewUpdateInformationComponent } from './employee/view-update-information/view-update-information.component';
-import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { ViewAllEmployeesComponent } from './employee/view-all-employees/view-all-employees.component';
 import { ViewResolvedReimbursementsComponent } from './pending-reimbursements/view-resolved-reimbursements/view-resolved-reimbursements.component';
 import { LoginComponent } from './users/login/login.component';
+<<<<<<< HEAD
+import { LogoutComponent } from './users/logout/logout.component';
+=======
+import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+
+>>>>>>> bff5c6dc2795b933655321cbfab2625ee3d00015
 
 @NgModule({
   declarations: [
@@ -21,10 +26,15 @@ import { SubmitReimbursementComponent } from './pending-reimbursements/submit-re
     HeaderComponent,
     ViewPendingReimbursementsComponent,
     ViewUpdateInformationComponent,
-    ViewEmployeeReimbursementComponent,
+    ViewResolvedReimbursementsComponent,
     ViewAllEmployeesComponent,
     ViewResolvedReimbursementsComponent,
+<<<<<<< HEAD
+    LogoutComponent
+=======
+    ViewEmployeeReimbursementComponent
     SubmitReimbursementComponent
+>>>>>>> bff5c6dc2795b933655321cbfab2625ee3d00015
   ],
   imports: [
     BrowserModule,
