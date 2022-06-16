@@ -20,7 +20,10 @@ const routes: Routes = [
   { path: "login", component: LoginComponent},
   { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]},
   { path: "logout", component: LogoutComponent},
+<<<<<<< HEAD
   { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
+=======
+>>>>>>> 014c78b960fd1d790ef833037061da4781845502
   { path: "submit-reimbursement", component: SubmitReimbursementComponent}
 
 ];
