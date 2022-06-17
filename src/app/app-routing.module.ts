@@ -19,8 +19,9 @@ const routes: Routes = [
   { path: "view-employee-reimbursement/:eID", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
   { path: "login", component: LoginComponent},
   { path: "logout", component: LogoutComponent},
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
-  { path: "submit-reimbursement", component: SubmitReimbursementComponent},
+  { path: "submit-reimbursement", component: SubmitReimbursementComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]}
+  
 ];
 
 @NgModule({
