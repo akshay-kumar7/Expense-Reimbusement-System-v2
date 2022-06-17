@@ -16,12 +16,12 @@ const routes: Routes = [
   { path: "view-pending-reimbursements", component: ViewPendingReimbursementsComponent, canActivate:[AuthenticationGuard]},
   { path: "view-update-information", component: ViewUpdateInformationComponent, canActivate:[AuthenticationGuard]},
   { path: "view-all-employees", component: ViewAllEmployeesComponent, canActivate:[AuthenticationGuard]},
-  { path: "view-employee-reimbursement", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-employee-reimbursement/:eID", component: ViewEmployeeReimbursementComponent, canActivate:[AuthenticationGuard]},
   { path: "login", component: LoginComponent},
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent, canActivate:[AuthenticationGuard]},
   { path: "logout", component: LogoutComponent},
-  { path: "submit-reimbursement", component: SubmitReimbursementComponent, canActivate:[AuthenticationGuard]}
-
+  { path: "submit-reimbursement", component: SubmitReimbursementComponent, canActivate:[AuthenticationGuard]},
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]}
+  
 ];
 
 @NgModule({
