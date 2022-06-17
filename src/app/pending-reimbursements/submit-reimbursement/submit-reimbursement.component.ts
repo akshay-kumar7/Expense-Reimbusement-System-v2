@@ -40,17 +40,16 @@ export class SubmitReimbursementComponent implements OnInit {
 
           console.log(response);
 
-        //   this.submitReimbursement = response;
+          alert("Request submitted!");
 
-
-        //   let submitRequest = {
-        //     reimbursementId: 0,
-        //     employeeId: sessionStorage.getItem('eID'),
-        //     managerId: sessionStorage.getItem('mID'),
-        //     status: 0,
-        //     amount: sessionStorage.getItem('rAmount'),
-        //     reason: sessionStorage.getItem('rReason'),
-        // }
+          this.newReimbursement = {
+            reimbursementId: 0,
+            employeeId: 0,
+            managerId:0,
+            status:'',
+            amount:0,
+            reason:''
+          };
       
       })
   }
