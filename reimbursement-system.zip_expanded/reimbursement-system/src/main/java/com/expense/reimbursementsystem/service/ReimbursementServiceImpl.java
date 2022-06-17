@@ -35,11 +35,6 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		super();
 	}
 
-	@Override
-	public ReimbursementPojo submitRequest(ReimbursementPojo reimbursementPojo) throws ApplicationException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public List<ReimbursementPojo> viewEmployeeRequests(int employeeId) throws ApplicationException {
@@ -99,6 +94,12 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		ReimbursementEntity returnedReimbursementEntity = reimbursementDao.save(reimbursementEntity);
 		
 		return reimbursementPojo;
+	}
+
+	@Override
+	public ReimbursementPojo submitRequest(ReimbursementPojo reimbursementPojo) throws ApplicationException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
