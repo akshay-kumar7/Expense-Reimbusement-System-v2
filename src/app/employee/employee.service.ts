@@ -20,5 +20,14 @@ export class EmployeeService {
     return this.http.get<Reimbursement[]>(this.baseUrl + '/' + employeeId);
   }
 
+  viewEmpInformation(employeeId: any): Observable<Employee>{
+    return this.http.get<Employee>(this.baseUrl+'/'+employeeId);
+  }
 
+  updateEmpInformation(sentEmployee: Employee): Observable<Employee>{
+
+    return this.http.put<Employee>(this.baseUrl, sentEmployee);
+  }
 }
+
+

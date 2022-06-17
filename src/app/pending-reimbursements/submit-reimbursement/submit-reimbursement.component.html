@@ -52,7 +52,7 @@
                                 id="rReason" 
                                 placeholder="Enter Reason" 
                                 name="Reimbursement Reason"
-                                [(ngModel)]="newReimbursement.reason"
+                                [(ngModel)]="newReimbursement.reason" required
                                 #rmReason = "ngModel">
                                 <div *ngIf="!rmReason.valid" class="text-danger-small"></div>
                         </div>
