@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { EmployeeHttpService } from '../employee-http.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee.model';
+import { EmployeeService } from '../employee.service';
 
 
 @Component({
@@ -23,25 +23,25 @@ export class ViewUpdateInformationComponent implements OnInit {
     managerType: false
   }
 
-  constructor(private employeeHttpService: EmployeeHttpService, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeeService, private router: Router) {}
 
   ngOnInit(): void {
 
-//     let bidparam = this.activatedRoute.snapshot.paramMap.get('bid');
-//     console.log(bidparam)
+    // let bidparam = this.activatedRoute.snapshot.paramMap.get('bid');
+    // console.log(bidparam)
 
-//     this.employeeHttpService.viewEmpInformation(bidParam).subscribe((response)=>{
+    // this.employeeService.viewEmpInformation(bidParam).subscribe((response)=>{
 
-//       this.newEmployee = response;
-//     })
+    //   this.newEmployee = response;
+    // })
   
-// }
+}
 
-//   updateEmpInfo(){
-//       this.employeeHttpService.updateEmpInformation(this.newEmployee).subscribe((response)=>{
+  updateEmpInfo(){
+      this.employeeService.updateEmpInformation(this.newEmployee).subscribe((response)=>{
 
-//         this.router.navigate(['']);
-//       })
+        
+      })
 }
 
 }
