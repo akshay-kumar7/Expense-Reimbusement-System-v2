@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expense.reimbursementsystem.exception.ApplicationException;
+import com.expense.reimbursementsystem.exception.EmptyEmployeeList;
 import com.expense.reimbursementsystem.exception.LoginFailedException;
 import com.expense.reimbursementsystem.pojo.EmployeePojo;
 import com.expense.reimbursementsystem.service.EmployeeService;
@@ -29,7 +30,7 @@ public class EmployeeController {
 
 	// http://localhost:5555/api/employee
 	@GetMapping("employee")
-	public List<EmployeePojo> getAllEmployees() throws ApplicationException {
+	public List<EmployeePojo> getAllEmployees() throws ApplicationException, EmptyEmployeeList {
 		return employeeService.getAllEmployees();
 	}
 	

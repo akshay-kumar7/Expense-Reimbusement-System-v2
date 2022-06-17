@@ -2,6 +2,7 @@ package com.expense.reimbursementsystem.service;
 
 import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.exception.EmployeeNotFoundException;
+import com.expense.reimbursementsystem.exception.EmptyEmployeeList;
 import com.expense.reimbursementsystem.exception.LoginFailedException;
 import com.expense.reimbursementsystem.pojo.EmployeePojo;
 import java.util.List;
@@ -14,7 +15,7 @@ public interface EmployeeService {
 
 	EmployeePojo updateInfo(EmployeePojo employeePojo) throws ApplicationException;
 
-	List<EmployeePojo> getAllEmployees() throws ApplicationException;
+	List<EmployeePojo> getAllEmployees() throws ApplicationException, EmptyEmployeeList;
 	
 	EmployeePojo register(EmployeePojo employeePojo) throws ApplicationException;
 

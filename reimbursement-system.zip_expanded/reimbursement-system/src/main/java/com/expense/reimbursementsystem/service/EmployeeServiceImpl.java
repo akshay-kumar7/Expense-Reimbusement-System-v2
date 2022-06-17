@@ -11,6 +11,7 @@ import com.expense.reimbursementsystem.dao.EmployeeDao;
 import com.expense.reimbursementsystem.entity.EmployeeEntity;
 import com.expense.reimbursementsystem.exception.ApplicationException;
 import com.expense.reimbursementsystem.exception.EmployeeNotFoundException;
+import com.expense.reimbursementsystem.exception.EmptyEmployeeList;
 import com.expense.reimbursementsystem.exception.LoginFailedException;
 import com.expense.reimbursementsystem.pojo.EmployeePojo;
 
@@ -42,17 +43,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 				loginEmployeePojo = loginEmployeePojoDetails;
 			}
 		}
-		
-		
-//		if (employeeEntityLogin.isPresent()) {
-//			EmployeeEntity loginEmployeeEntity = employeeEntityLogin.get();
-//		
-//		loginEmployeePojo = new EmployeePojo();
-//		BeanUtils.copyProperties(loginEmployeeDetails, loginEmployeePojo);
-//		}
+
+
+		//		if (employeeEntityLogin.isPresent()) {
+		//			EmployeeEntity loginEmployeeEntity = employeeEntityLogin.get();
+		//		
+		//		loginEmployeePojo = new EmployeePojo();
+		//		BeanUtils.copyProperties(loginEmployeeDetails, loginEmployeePojo);
+		//		}
 		return loginEmployeePojo;
 	}
-	
+
 
 	@Override
 	public EmployeePojo viewInfo(int employeeId) throws ApplicationException, EmployeeNotFoundException{
@@ -60,11 +61,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		EmployeePojo employeePojo = null;
 		if (employeeEntityOpt.isPresent()) {
 			EmployeeEntity fetchedEmployeeEntity = employeeEntityOpt.get();
-//			employeePojo= new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(),
-//					fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
-//					fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
-//					fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
-//					fetchedEmployeeEntity.isManagerType());
+			//			employeePojo= new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(),
+			//					fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
+			//					fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
+			//					fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
+			//					fetchedEmployeeEntity.isManagerType());
 
 			employeePojo = new EmployeePojo();
 			BeanUtils.copyProperties(fetchedEmployeeEntity, employeePojo);
@@ -81,19 +82,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<EmployeePojo> getAllEmployees() throws ApplicationException {
+	public List<EmployeePojo> getAllEmployees() throws ApplicationException, EmptyEmployeeList {
 		List<EmployeeEntity> allEmployeeEntity = employeeDao.findAll();
 
 		List<EmployeePojo> allEmployeePojo = new ArrayList<EmployeePojo>();
 
-		for (EmployeeEntity fetchedEmployeeEntity : allEmployeeEntity) {
-			EmployeePojo returnEmployeePojo = new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(),
-					fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
-					fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
-					fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
-					fetchedEmployeeEntity.isManagerType());
+		if(allEmployeeEntity.isEmpty()) {
+			throw new EmptyEmployeeList();
+		} else {
+			for (EmployeeEntity fetchedEmployeeEntity : allEmployeeEntity) {
+				EmployeePojo returnEmployeePojo = new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(),
+						fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
+						fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
+						fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
+						fetchedEmployeeEntity.isManagerType());
 
-			allEmployeePojo.add(returnEmployeePojo);
+				allEmployeePojo.add(returnEmployeePojo);
+			}
 		}
 		return allEmployeePojo;
 	}

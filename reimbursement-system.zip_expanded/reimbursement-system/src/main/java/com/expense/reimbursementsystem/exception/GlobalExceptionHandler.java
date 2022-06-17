@@ -1,6 +1,7 @@
 package com.expense.reimbursementsystem.exception;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,22 +38,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<Object>(errors, headers, status);
 	}
 
-	@ExceptionHandler({EmployeeNotFoundException.class, LoginFailedException.class})
-	protected ResponseEntity<Object> handleEmployeeNotFoundException(Exception ex, 
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
+	@ExceptionHandler({EmployeeNotFoundException.class, LoginFailedException.class, EmptyEmployeeList.class})
+	protected ResponseEntity<Object> handleEmployeeNotFoundException(Exception ex) {
 		Map<String, String> errors =  new HashMap<>();
-		errors.put("date", LocalDate.now() + "");
+		errors.put("date", LocalDateTime.now() + "");
 		errors.put("error", ex.getMessage());
-		return new ResponseEntity<Object>(errors, headers, status);
-	}
-
-	@ExceptionHandler(ApplicationException.class)
-	protected ResponseEntity<Object> handleApplicationException(ApplicationException ex, 
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
-		Map<String, String> errors =  new HashMap<>();
-		errors.put("date", LocalDate.now() + "");
-		errors.put("error", ex.getMessage());
-		return new ResponseEntity<Object>(errors, headers, status);
+		return new ResponseEntity<Object>(errors, HttpStatus.BAD_REQUEST);
 	}
 
 
