@@ -40,10 +40,17 @@ public class ReimbursementContoller {
 		return reimbursementService.getReimbursementsByStatus(status);
 	}
 	
-	@PostMapping("/submitRequest")
+	@PostMapping("submitrequest")
 	public ReimbursementPojo submitReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException {
 		return reimbursementService.submitInfo(reimbursementPojo);
 	}
+	
+//	@PostMapping("/{rid}")
+//	public List<ReimbursementPojo> submitReimbursement(@PathVariable("rid") int employeeId)
+//			throws ApplicationException {
+//		return reimbursementService.submitInfo(employeeId);
+//	}
+//	
   
 	@PutMapping("changestatus")
 	public ReimbursementPojo updateReimbursement(@RequestBody ReimbursementPojo reimbursementPojo) throws ApplicationException{
