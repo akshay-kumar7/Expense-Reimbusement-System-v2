@@ -95,7 +95,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 			allEmployeePojo.add(returnEmployeePojo);
 		}
-
 		return allEmployeePojo;
 	}
 
