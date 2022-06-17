@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.expense.reimbursementsystem.dao.ReimbursementDao;
 import com.expense.reimbursementsystem.entity.ReimbursementEntity;
 import com.expense.reimbursementsystem.exception.ApplicationException;
+import com.expense.reimbursementsystem.exception.EmployeeNotFoundException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 
 @Service
@@ -18,6 +19,10 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 	@Autowired
 	ReimbursementDao reimbursementDao;
 
+	public ReimbursementServiceImpl() {
+		super();
+	}
+	
 	@Override
 	public List<ReimbursementPojo> getReimbursementsByStatus(String status) throws ApplicationException {
 		List<ReimbursementEntity> allReimbursementsEntity = reimbursementDao.findReimbursementByStatus(status);
@@ -31,26 +36,26 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 
 	}
 
-	public ReimbursementServiceImpl() {
-		super();
-	}
-
-
 	@Override
-	public List<ReimbursementPojo> viewEmployeeRequests(int employeeId) throws ApplicationException {
+	public List<ReimbursementPojo> viewEmployeeRequests(int employeeId) throws ApplicationException, EmployeeNotFoundException {
 		List<ReimbursementEntity> employeeReimbursementEntity = reimbursementDao.findReimbursementByEmployeeId(employeeId);
 		List<ReimbursementPojo> reimbursementPojo = new ArrayList<ReimbursementPojo>();
-		
-		for(ReimbursementEntity fetchedReimbursementEntity : employeeReimbursementEntity) {
-			ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(
-					fetchedReimbursementEntity.getReimbursementId(),
-					fetchedReimbursementEntity.getEmployeeId(),
-					fetchedReimbursementEntity.getManagerId(),
-					fetchedReimbursementEntity.getStatus(),
-					fetchedReimbursementEntity.getAmount(),
-					fetchedReimbursementEntity.getReason());
-			reimbursementPojo.add(returnReimbursementPojo);
+
+		if(employeeReimbursementEntity.isEmpty()) {
+			throw new EmployeeNotFoundException(employeeId);
+		} else {
+			for(ReimbursementEntity fetchedReimbursementEntity : employeeReimbursementEntity) {
+				ReimbursementPojo returnReimbursementPojo = new ReimbursementPojo(
+						fetchedReimbursementEntity.getReimbursementId(),
+						fetchedReimbursementEntity.getEmployeeId(),
+						fetchedReimbursementEntity.getManagerId(),
+						fetchedReimbursementEntity.getStatus(),
+						fetchedReimbursementEntity.getAmount(),
+						fetchedReimbursementEntity.getReason());
+				reimbursementPojo.add(returnReimbursementPojo);
+			} 
 		}
+
 		return reimbursementPojo;
 	}
 
@@ -92,7 +97,7 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		ReimbursementEntity reimbursementEntity = new ReimbursementEntity();
 		BeanUtils.copyProperties(reimbursementPojo, reimbursementEntity);
 		ReimbursementEntity returnedReimbursementEntity = reimbursementDao.save(reimbursementEntity);
-		
+
 		return reimbursementPojo;
 	}
 
