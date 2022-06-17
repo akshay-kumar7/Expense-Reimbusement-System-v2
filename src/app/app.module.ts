@@ -13,6 +13,7 @@ import { LoginComponent } from './users/login/login.component';
 import { LogoutComponent } from './users/logout/logout.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+import { RegisterComponent } from './users/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SubmitReimbursementComponent } from './pending-reimbursements/submit-re
     ViewResolvedReimbursementsComponent,
     LogoutComponent,
     ViewEmployeeReimbursementComponent,
-    SubmitReimbursementComponent
+    SubmitReimbursementComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
