@@ -18,6 +18,7 @@ public class LoggingAspect {
 	public void beforeLogging(JoinPoint joinPoint) {
 		String className = joinPoint.getSignature().getDeclaringType().getSimpleName();
 		String methodName = joinPoint.getSignature().getDeclaringType().getName();
+//		LocalDateTime dateNow =  joinPoint.get
 		LOG.info("Entering " + className + "." + methodName);
 	}
 	

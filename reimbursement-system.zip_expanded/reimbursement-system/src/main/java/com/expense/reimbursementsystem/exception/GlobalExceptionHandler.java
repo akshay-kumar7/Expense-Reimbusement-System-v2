@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.jetty.client.HttpAuthenticationStore;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,11 +40,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 
 	@ExceptionHandler({EmployeeNotFoundException.class, LoginFailedException.class, EmptyEmployeeList.class})
-	protected ResponseEntity<Object> handleEmployeeNotFoundException(Exception ex) {
+	protected ResponseEntity<Object> handleEmployeeNotFoundException(Exception ex, HttpStatus status) {
 		Map<String, String> errors =  new HashMap<>();
 		errors.put("date", LocalDateTime.now() + "");
 		errors.put("error", ex.getMessage());
-		return new ResponseEntity<Object>(errors, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<Object>(errors, status);
 	}
 
 
