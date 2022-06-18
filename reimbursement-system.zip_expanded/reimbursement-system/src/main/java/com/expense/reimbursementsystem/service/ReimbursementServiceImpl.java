@@ -87,6 +87,7 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		ReimbursementEntity reimbursementEntity = new ReimbursementEntity();
 		BeanUtils.copyProperties(reimbursementPojo, reimbursementEntity);
 		ReimbursementEntity returnedReimbursementEntity = reimbursementDao.save(reimbursementEntity);
+		reimbursementPojo.setEmployeeId(returnedReimbursementEntity.getEmployeeId());
 		return reimbursementPojo;
 	}
 

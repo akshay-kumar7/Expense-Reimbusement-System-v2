@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,9 @@ public class EmployeeController {
 	public EmployeePojo login(@RequestBody EmployeePojo employeePojo) throws ApplicationException, LoginFailedException{
 		return employeeService.login(employeePojo);
 	}
-	
-
+	// http://localhost:5555/api/employee
+	@PutMapping("employee")
+	public EmployeePojo updateInfo(@RequestBody EmployeePojo employeePojo)throws ApplicationException{
+		return employeeService.updateInfo(employeePojo);
+	}
 }
