@@ -9,6 +9,7 @@ import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/vie
 import { LogoutComponent } from './users/logout/logout.component';
 import { AuthenticationGuard } from './users/authentication.guard';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
+import { RegisterComponent } from './users/register/register.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent},
   { path: "logout", component: LogoutComponent},
   { path: "submit-reimbursement", component: SubmitReimbursementComponent, canActivate:[AuthenticationGuard]},
-  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]}
+  { path: "view-resolved-reimbursements", component: ViewResolvedReimbursementsComponent,  canActivate:[AuthenticationGuard]},
+  { path: "register", component: RegisterComponent}
   
 ];
 

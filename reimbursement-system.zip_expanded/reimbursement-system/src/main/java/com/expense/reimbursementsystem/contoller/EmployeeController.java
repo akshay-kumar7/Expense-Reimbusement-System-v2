@@ -2,8 +2,6 @@ package com.expense.reimbursementsystem.contoller;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expense.reimbursementsystem.exception.ApplicationException;
+import com.expense.reimbursementsystem.exception.EmptyEmployeeList;
+import com.expense.reimbursementsystem.exception.LoginFailedException;
 import com.expense.reimbursementsystem.pojo.EmployeePojo;
 import com.expense.reimbursementsystem.service.EmployeeService;
 import com.expense.reimbursementsystem.service.ReimbursementService;
@@ -22,8 +22,6 @@ import com.expense.reimbursementsystem.service.ReimbursementService;
 @RestController
 @RequestMapping("api")
 public class EmployeeController {
-	
-	final static Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
 
 	@Autowired
 	EmployeeService employeeService;
@@ -31,20 +29,20 @@ public class EmployeeController {
 
 	// http://localhost:5555/api/employee
 	@GetMapping("employee")
-	public List<EmployeePojo> getAllEmployees() throws ApplicationException {
+	public List<EmployeePojo> getAllEmployees() throws ApplicationException, EmptyEmployeeList {
 		return employeeService.getAllEmployees();
 	}
 	
 	
 	// http://localhost:5555/api/employee
-	@PostMapping("employee")
+	@PostMapping("employee/register")
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
 		return employeeService.register(employeePojo);
 	}
 	
-	// http://localhost:5555/api/employee
+	// http://localhost:5555/api/employee/login
 	@PostMapping("employee/login")
-	public EmployeePojo login(@RequestBody EmployeePojo employeePojo) throws ApplicationException{
+	public EmployeePojo login(@RequestBody EmployeePojo employeePojo) throws ApplicationException, LoginFailedException{
 		return employeeService.login(employeePojo);
 	}
 	// http://localhost:5555/api/employee
