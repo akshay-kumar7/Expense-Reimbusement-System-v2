@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Employee } from '../employee.model';
+import { AuthService } from 'src/app/users/auth.service';
+import { User } from 'src/app/users/user.model';
 import { EmployeeService } from '../employee.service';
 
 
@@ -11,7 +12,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class ViewUpdateInformationComponent implements OnInit {
 
-  newEmployee: Employee = {
+  newEmployee: User = {
 
     employeeId: 0,
     managerId: 0,
@@ -23,7 +24,7 @@ export class ViewUpdateInformationComponent implements OnInit {
     managerType: false
   }
 
-  constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeeService, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeeService, private router: Router, private authService: AuthService ) {}
 
   ngOnInit(): void {
 
@@ -33,14 +34,19 @@ export class ViewUpdateInformationComponent implements OnInit {
     // this.employeeService.viewEmpInformation(bidParam).subscribe((response)=>{
 
     //   this.newEmployee = response;
-    // })
+    // }
+    this.newEmployee = this.authService.retreiveUserInfo();
+    
   
 }
 
-  updateEmpInfo(){
-      this.employeeService.updateEmpInformation(this.newEmployee).subscribe((response)=>{
 
+
+  updateEmpInfo(){
+
+      this.employeeService.updateEmpInformation(this.newEmployee).subscribe((response)=>{
         
+        alert("Profile Updated!");
       })
 }
 

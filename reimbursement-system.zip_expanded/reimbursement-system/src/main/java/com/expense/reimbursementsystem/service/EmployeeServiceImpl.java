@@ -66,8 +66,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeePojo updateInfo(EmployeePojo employeePojo) throws ApplicationException {
-		// TODO Auto-generated method stub
-		return null;
+		 EmployeeEntity employeeEntity = new EmployeeEntity();
+		 BeanUtils.copyProperties(employeePojo, employeeEntity);
+		 EmployeeEntity returnedEmployeeEntity = employeeDao.save(employeeEntity);
+		return employeePojo;
 	}
 
 	@Override
