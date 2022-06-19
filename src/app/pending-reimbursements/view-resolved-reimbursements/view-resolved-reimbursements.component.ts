@@ -14,6 +14,8 @@ export class ViewResolvedReimbursementsComponent implements OnInit {
 
   currentAllDeniedReimbursements: Reimbursement[]
 
+  storeMessage: string = "";
+
   constructor(private ReimbursementsService: ReimbursementsService,
     private router: Router) { 
       this.currentAllApprovedReimbursements = [];
@@ -25,13 +27,30 @@ export class ViewResolvedReimbursementsComponent implements OnInit {
   }
 
   loadData(){
-    this.ReimbursementsService.getAllApprovedReimbursements().subscribe(response => {
-      console.log(response);
-      this.currentAllApprovedReimbursements = response;
+    this.ReimbursementsService.getAllApprovedReimbursements().subscribe(
+      {
+        next : response => {
+          console.log(response);
+          this.currentAllApprovedReimbursements = response;
+      },
+      error : (error) => {
+        console.log(error.error.errorMessage);
+        this.storeMessage = error.error.errorMessage;
+      }
     })
-    this.ReimbursementsService.getAllDeniedReimbursements().subscribe(response => {
-      console.log(response);
-      this.currentAllDeniedReimbursements = response;
+
+
+    this.ReimbursementsService.getAllDeniedReimbursements().subscribe(
+      {
+        next :  response => {
+          console.log(response);
+          this.currentAllDeniedReimbursements = response;
+      },
+       error : (error) => {
+        console.log(error.error.errorMessage);
+        this.storeMessage = error.error.errorMessage;
+       }
+     
     })
   }
 
