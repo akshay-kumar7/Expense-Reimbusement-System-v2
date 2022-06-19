@@ -28,13 +28,6 @@ export class ViewUpdateInformationComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // let bidparam = this.activatedRoute.snapshot.paramMap.get('bid');
-    // console.log(bidparam)
-
-    // this.employeeService.viewEmpInformation(bidParam).subscribe((response)=>{
-
-    //   this.newEmployee = response;
-    // }
     this.newEmployee = this.authService.retreiveUserInfo();
     
   

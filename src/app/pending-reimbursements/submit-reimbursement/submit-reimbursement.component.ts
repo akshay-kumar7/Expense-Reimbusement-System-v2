@@ -29,7 +29,11 @@ export class SubmitReimbursementComponent implements OnInit {
     this.currentAllReimbursements =[];
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+    
+  }
 
 
 

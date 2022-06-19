@@ -79,6 +79,22 @@
 
                         </div>
 
+                        <div class="mb-3">
+                            <label for="ePassword" class="form-label">Password</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="empPassword" 
+                                placeholder="Enter Your Username" 
+                                name="empPassword"
+                                #empPassword="ngModel"
+                                [(ngModel)] = "newEmployee.password" required>
+                                <div *ngIf="!empPassword.valid && empPassword.touched" class="text-danger small">
+                                    Password Required!
+                                </div>
+
+                        </div>
+
                         <button type="button" class="btn btn-primary" (click)=" updateEmpInfo()">Update Profile</button>
                     </div>
                     <div class="card-footer bg-light">
