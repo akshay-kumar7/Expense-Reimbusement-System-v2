@@ -16,7 +16,8 @@
                                 type="text" 
                                 class="form-control" 
                                 id="empID"  
-                                name="employeeId">
+                                name="employeeId"
+                                [(ngModel)] = "newEmployee.employeeId" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="eFirstname" class="form-label">First Name:</label>
@@ -26,7 +27,11 @@
                                 id="empFname" 
                                 placeholder="Enter Your First Name" 
                                 name="empFirstname"
-                                >
+                                [(ngModel)] = "newEmployee.firstName"required
+                                #empFirstname="ngModel">
+                                <div *ngIf="!empFirstname.valid && empFirstname.touched" class="text-danger small">
+                                    Firstname Required!
+                                </div>
                         </div>
                         <div class="mb-3">
                             <label for="eLastname" class="form-label">Last Name:</label>
@@ -36,7 +41,11 @@
                                 id="empLname" 
                                 placeholder="Enter Your Last Name" 
                                 name="empLastname"
-                                >
+                                [(ngModel)] = "newEmployee.lastName" required
+                                #empLastname="ngModel">
+                                <div *ngIf="!empLastname.valid && empLastname.touched" class="text-danger small">
+                                    Lastname Required!
+                                </div>
                         </div>
                         <div class="mb-3">
                             <label for="eEmail" class="form-label">Email:</label>
@@ -46,7 +55,11 @@
                                 id="empEmail" 
                                 placeholder="Enter Your Email" 
                                 name="empEmail"
-                                >
+                                [(ngModel)] = "newEmployee.email" required
+                                #empEmail="ngModel">
+                                <div *ngIf="!empEmail.valid && empEmail.touched" class="text-danger small">
+                                    Email Required!
+                                </div>
                         </div>
                         <div class="mb-3">
                             <label for="eUsername" class="form-label">Username</label>
@@ -56,7 +69,11 @@
                                 id="empUsername" 
                                 placeholder="Enter Your Username" 
                                 name="empUsername"
-                                >
+                                #empUsername="ngModel"
+                                [(ngModel)] = "newEmployee.userName" required>
+                                <div *ngIf="!empUsername.valid && empUsername.touched" class="text-danger small">
+                                    Username Required!
+                                </div>
 
                         </div>
 

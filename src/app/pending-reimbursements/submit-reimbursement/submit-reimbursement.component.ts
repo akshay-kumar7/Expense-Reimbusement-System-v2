@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursement } from '../reimbursement.model';
+import { AuthService } from 'src/app/users/auth.service';
 
 @Component({
   selector: 'submit-reimbursement',
@@ -34,7 +35,6 @@ export class SubmitReimbursementComponent implements OnInit {
 
       submitInfo() {
 
-        // var eID = sessionStorage.getItem('userInformation')
 
         this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe((response)=>{
 
@@ -52,6 +52,7 @@ export class SubmitReimbursementComponent implements OnInit {
           };
       
       })
+
   }
 
 }

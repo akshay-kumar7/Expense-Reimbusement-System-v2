@@ -2,11 +2,11 @@ export interface User{
     
     employeeId: number,
 	managerId: number,
-	firstName: String,
-    lastName: String,
-    email: String,
-    userName: String,
-    password: String,
-    managerType: Boolean
+	firstName: string,
+    lastName: string,
+    email: string,
+    userName: string,
+    password: string,
+    managerType: boolean
 
 }
