@@ -18,7 +18,7 @@ export class SubmitReimbursementComponent implements OnInit {
     reimbursementId: 0,
     employeeId: 0,
     managerId:0,
-    status:'pending',
+    status:'Pending',
     amount:0,
     reason:''
     

@@ -1,48 +1,50 @@
 <div class="col-2">
 </div>
 <main id="main" class="main">
-    <div class="row mt-5">
-        <div class="col-2">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-2">
+            </div>
+            <div class="pagetitle">
+                <h2>Pending Reimbursements</h2>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">REIMBURSEMENT ID</th>
+                        <th scope="col">EMPLOYEE ID</th>
+                        <th scope="col">MANAGER ID</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col">AMOUNT</th>
+                        <th scope="col">REASON</th>
+                        <th scope="col">APPROVE</th>
+                        <th scope="col">DENY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reimbursement of currentAllPendingReimbursements">
+                        <th scope="row">{{ reimbursement.reimbursementId }}</th>
+                        <td>{{ reimbursement.employeeId }}</td>
+                        <td>{{ reimbursement.managerId}}</td>
+                        <td>{{ reimbursement.status }}</td>
+                        <td>{{ reimbursement.amount }}</td>
+                        <td>{{ reimbursement.reason }}</td>
+                        <td>
+                            <button type="button" class="btn btn-success"
+                                (click)="approveRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
+                                <i class="material-icons">thumb_up</i>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger"
+                                (click)="denyRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
+                                <i class="material-icons">thumb_down</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="pagetitle">
-            <h2>Pending Reimbursements</h2>
-        </div>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">REIMBURSEMENT ID</th>
-                    <th scope="col">EMPLOYEE ID</th>
-                    <th scope="col">MANAGER ID</th>
-                    <th scope="col">STATUS</th>
-                    <th scope="col">AMOUNT</th>
-                    <th scope="col">REASON</th>
-                    <th scope="col">APPROVE</th>
-                    <th scope="col">DENY</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let reimbursement of currentAllPendingReimbursements">
-                    <th scope="row">{{ reimbursement.reimbursementId }}</th>
-                    <td>{{ reimbursement.employeeId }}</td>
-                    <td>{{ reimbursement.managerId}}</td>
-                    <td>{{ reimbursement.status }}</td>
-                    <td>{{ reimbursement.amount }}</td>
-                    <td>{{ reimbursement.reason }}</td>
-                    <td>
-                        <button type="button" class="btn btn-success"
-                            (click)="approveRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
-                            <i class="material-icons">thumb_up</i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-danger"
-                            (click)="denyRequestStatus(reimbursement.reimbursementId, reimbursement.employeeId, reimbursement.managerId, reimbursement.amount, reimbursement.reason)">
-                            <i class="material-icons">thumb_down</i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </main>
 <div class="col-2">
