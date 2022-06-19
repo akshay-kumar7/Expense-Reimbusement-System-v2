@@ -1,66 +1,68 @@
 <div class="col-2">
 </div>
 <main id="main" class="main">
-    <div class="row mt-5">
-        <div class="col-2">
-        </div>
-        <div class="pagetitle">
-            <h2>Resolved Reimbursements</h2>
-        </div>
-        <section class="section">
+    <div class="container">
+        <div class="row mt-5">
             <div class="col-2">
             </div>
-            <h4 class="card-title">Approved Requests</h4>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">REIMBURSEMENT ID</th>
-                        <th scope="col">EMPLOYEE ID</th>
-                        <th scope="col">MANAGER ID</th>
-                        <th scope="col">STATUS</th>
-                        <th scope="col">AMOUNT</th>
-                        <th scope="col">REASON</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let reimbursement of currentAllApprovedReimbursements">
-                        <th scope="row">{{ reimbursement.reimbursementId }}</th>
-                        <td>{{ reimbursement.employeeId }}</td>
-                        <td>{{ reimbursement.managerId}}</td>
-                        <td>{{ reimbursement.status }}</td>
-                        <td>{{ reimbursement.amount }}</td>
-                        <td>{{ reimbursement.reason }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="section">
-            <div class="col-2">
+            <div class="pagetitle">
+                <h2>Resolved Reimbursements</h2>
             </div>
-            <h4 class="card-title">Denied Requests</h4>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">REIMBURSEMENT ID</th>
-                        <th scope="col">EMPLOYEE ID</th>
-                        <th scope="col">MANAGER ID</th>
-                        <th scope="col">STATUS</th>
-                        <th scope="col">AMOUNT</th>
-                        <th scope="col">REASON</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let reimbursement of currentAllDeniedReimbursements">
-                        <th scope="row">{{ reimbursement.reimbursementId }}</th>
-                        <td>{{ reimbursement.employeeId }}</td>
-                        <td>{{ reimbursement.managerId}}</td>
-                        <td>{{ reimbursement.status }}</td>
-                        <td>{{ reimbursement.amount }}</td>
-                        <td>{{ reimbursement.reason }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <section class="section">
+                <div class="col-2">
+                </div>
+                <h4 class="card-title">Approved Requests</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">REIMBURSEMENT ID</th>
+                            <th scope="col">EMPLOYEE ID</th>
+                            <th scope="col">MANAGER ID</th>
+                            <th scope="col">STATUS</th>
+                            <th scope="col">AMOUNT</th>
+                            <th scope="col">REASON</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let reimbursement of currentAllApprovedReimbursements">
+                            <th scope="row">{{ reimbursement.reimbursementId }}</th>
+                            <td>{{ reimbursement.employeeId }}</td>
+                            <td>{{ reimbursement.managerId}}</td>
+                            <td>{{ reimbursement.status }}</td>
+                            <td>{{ reimbursement.amount }}</td>
+                            <td>{{ reimbursement.reason }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="section">
+                <div class="col-2">
+                </div>
+                <h4 class="card-title">Denied Requests</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">REIMBURSEMENT ID</th>
+                            <th scope="col">EMPLOYEE ID</th>
+                            <th scope="col">MANAGER ID</th>
+                            <th scope="col">STATUS</th>
+                            <th scope="col">AMOUNT</th>
+                            <th scope="col">REASON</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let reimbursement of currentAllDeniedReimbursements">
+                            <th scope="row">{{ reimbursement.reimbursementId }}</th>
+                            <td>{{ reimbursement.employeeId }}</td>
+                            <td>{{ reimbursement.managerId}}</td>
+                            <td>{{ reimbursement.status }}</td>
+                            <td>{{ reimbursement.amount }}</td>
+                            <td>{{ reimbursement.reason }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
     </div>
 </main>
 <div class="col-2">
