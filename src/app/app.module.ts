@@ -15,6 +15,8 @@ import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/vie
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
 import { RegisterComponent } from './users/register/register.component';
 import { ViewMyReimbursementComponent } from './pending-reimbursements/view-my-reimbursement/view-my-reimbursement.component';
+import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import { ManagerhomeComponent } from './managerhome/managerhome.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ViewMyReimbursementComponent } from './pending-reimbursements/view-my-r
     ViewEmployeeReimbursementComponent,
     SubmitReimbursementComponent,
     RegisterComponent,
-    ViewMyReimbursementComponent
+    ViewMyReimbursementComponent,
+    EmployeehomeComponent,
+    ManagerhomeComponent
   ],
   imports: [
     BrowserModule,

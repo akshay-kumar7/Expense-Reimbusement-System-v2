@@ -31,6 +31,6 @@ export class ViewAllEmployeesComponent implements OnInit {
   }
 
   goToReimbursement(employeeId : number) {
-    this.router.navigate(['view-employee-reimbursement', employeeId]);
+    this.router.navigate(['/managerhome/view-employee-reimbursement', employeeId]);
   }
 }

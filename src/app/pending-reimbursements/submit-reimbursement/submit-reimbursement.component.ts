@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursement } from '../reimbursement.model';
 import { AuthService } from 'src/app/users/auth.service';
+import { User } from 'src/app/users/user.model';
 
 @Component({
   selector: 'submit-reimbursement',
@@ -24,22 +25,31 @@ export class SubmitReimbursementComponent implements OnInit {
     
   }
 
-  constructor(private activatedRoute: ActivatedRoute, private reimbursementsService: ReimbursementsService, private router: Router) {
+  newEmployee: User = {
+
+    employeeId: 0,
+    managerId: 0,
+    firstName: '',
+    lastName: '',
+    email:'',
+    userName: '',
+    password: '',
+    managerType: false
+  }
+  
+
+  constructor(private activatedRoute: ActivatedRoute, private reimbursementsService: ReimbursementsService, private router: Router, private authService: AuthService, private reimbursementService: ReimbursementsService,) {
 
     this.currentAllReimbursements =[];
    }
 
   ngOnInit(): void {
+    this.newEmployee = this.authService.retreiveUserInfo();
 
-
-    
-  }
-
-
-
+    let eIdParam = this.newEmployee.employeeId;
+    };
+  
       submitInfo() {
-
-
         this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe((response)=>{
 
           console.log(response);
