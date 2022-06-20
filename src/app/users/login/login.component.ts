@@ -62,4 +62,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  hasLoggedIn(){
+    return this.authService.isLoggedIn;
+  }
+
 }
