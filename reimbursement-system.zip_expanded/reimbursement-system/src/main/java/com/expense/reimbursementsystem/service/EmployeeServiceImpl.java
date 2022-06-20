@@ -38,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 				//EmployeeEntity fetchedEmployeeEntity = employeeEntityLogin;
 				EmployeePojo loginEmployeePojoDetails = new EmployeePojo(fetchedEmployeeEntity.getEmployeeId(), fetchedEmployeeEntity.getManagerId(), fetchedEmployeeEntity.getFirstName(),
 						fetchedEmployeeEntity.getLastName(), fetchedEmployeeEntity.getEmail(),
-						fetchedEmployeeEntity.getPassword(), fetchedEmployeeEntity.getUserName(),
+						fetchedEmployeeEntity.getUserName(), fetchedEmployeeEntity.getPassword(),
 						fetchedEmployeeEntity.isManagerType());
 				//loginEmployee.add(loginEmployeePojoDetails);
 				loginEmployeePojo = loginEmployeePojoDetails;

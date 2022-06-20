@@ -17,6 +17,21 @@ export class AuthService {
   }
 
   retreiveUserInfo(): User{
+
+    let returnUser: User = {
+      employeeId: 0,
+      managerId: 0,
+      firstName: '',
+      lastName: '',
+      email: '',
+      userName: '',
+      password: '',
+      managerType: false
+    };
+    let userData: any = sessionStorage.getItem("userInformation");
+    if(userData!=null){
+      returnUser= JSON.parse(userData);
+
     let returnUser:User = {
       employeeId: 0,
       managerId: 0,
@@ -30,6 +45,7 @@ export class AuthService {
     let userData: any = sessionStorage.getItem("userInformation");
     if(userData!=null){
       returnUser = JSON.parse(userData);
+
     }
     return returnUser;
   }
