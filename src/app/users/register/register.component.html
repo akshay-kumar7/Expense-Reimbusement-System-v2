@@ -11,14 +11,14 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="fname">First Name</label>
-                                <input id="fname" type="text" class="form-control form-control-lg" name="fname" value="" required autofocus>
+                                <input id="firstName"  type="text" class="form-control form-control-lg" name="firstName" [(ngModel)]="newUser.firstName" value="" required autofocus>
                                 <div class="invalid-feedback">
                                     First Name is required	
                                 </div>
                             </div>
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="lname">Last Name</label>
-                                <input id="lname" type="text" class="form-control form-control-lg" name="lname" value="" required autofocus>
+                                <input id="lastName" type="text" class="form-control form-control-lg" name="lastName" [(ngModel)]="newUser.lastName" value="" required autofocus>
                                 <div class="invalid-feedback">
                                     Last Name is required	
                                 </div>
@@ -26,7 +26,7 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="email">E-Mail Address</label>
-                                <input id="email" type="email" class="form-control form-control-lg" name="email" value="" required>
+                                <input id="email" type="email" class="form-control form-control-lg" name="email" [(ngModel)]="newUser.email" value="" required>
                                 <div class="invalid-feedback">
                                     Email is invalid
                                 </div>
@@ -34,7 +34,7 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="userName">Username</label>
-                                <input id="userName" type="text" class="form-control form-control-lg" name="userName" value="" required>
+                                <input id="userName" type="text" class="form-control form-control-lg" name="userName" [(ngModel)]="newUser.userName" value="" required>
                                 <div class="invalid-feedback">
                                     Username is required
                                 </div>
@@ -42,7 +42,7 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="password">Password</label>
-                                <input id="password" type="password" class="form-control form-control-lg" name="password" required>
+                                <input id="password" type="password" class="form-control form-control-lg" name="password" [(ngModel)]="newUser.password" required>
                                 <div class="invalid-feedback">
                                     Password is required
                                 </div>
@@ -50,7 +50,7 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="email">Manager Type : Please enter True or False</label>
-                                <input id="managerType" type="text" class="form-control form-control-lg" name="managerType" value="" required>
+                                <input id="managerType" type="text" class="form-control form-control-lg" name="managerType" [(ngModel)]="newUser.managerType" value="" required>
                                 <div class="invalid-feedback">
                                     Manager Type is required
                                 </div>
@@ -58,13 +58,13 @@
 
                             <div class="form-outline form-white mb-4">
                                 <label class="form-label" for="email">Manager ID</label>
-                                <input id="managerID" type="number" class="form-control form-control-lg" name="managerID" value="" required>
+                                <input id="managerId" type="number" class="form-control form-control-lg" name="managerId" [(ngModel)]="newUser.managerId" value="" required>
                                 <div class="invalid-feedback">
                                     Manager ID is required
                                 </div>
                             </div>
 
-                            <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="register()">Sign Up</button>
+                            <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="register(newUser.managerId, newUser.firstName, newUser.lastName, newUser.email, newUser.userName, newUser.password, newUser.managerType)">Sign Up</button>
                         </div>
                     </div>
                 </div>
