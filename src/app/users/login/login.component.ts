@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -45,12 +45,12 @@ export class LoginComponent implements OnInit {
             //set the role to admin in auth service
             this.authService.managerType="true";
             // route to view-http-book
-            this.router.navigate(['view-all-employees']);
+            this.router.navigate(['managerhome']);
         }else if(response.managerType == false){
             //set the role to employee in auth service
             this.authService.managerType="false";
             // route to display component
-            this.router.navigate(['view-update-information']);
+            this.router.navigate(['employeehome']);
         }
       }else{
         //login failed
@@ -60,10 +60,6 @@ export class LoginComponent implements OnInit {
       }
     
     });
-  }
-
-  hasLoggedIn(){
-    return this.authService.isLoggedIn;
   }
 
 }

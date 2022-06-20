@@ -44,11 +44,11 @@ export class RegisterComponent implements OnInit {
       userName,
       password,
       managerType
-    };
+      };
 
-    this.usersService.registerUser(this.newUser).subscribe((reponse)=>{
-      alert("New User Registered");
-      this.newUser={
+      this.usersService.registerUser(this.newUser).subscribe((reponse)=>{
+        alert("New User Registered");
+        this.newUser={
         employeeId: 0,
         managerId: 0,
         firstName: '',
@@ -60,6 +60,8 @@ export class RegisterComponent implements OnInit {
       };
 
     })
+
+    this.router.navigate(['login']);
     
   }
 
