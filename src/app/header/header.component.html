@@ -15,7 +15,7 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
-            <h6>{{newEmployee.firstName}} {{newEmployee.lastName}}</h6> 
+            <h6>{{retrieveUserInfo().firstName}} {{retrieveUserInfo().lastName}}</h6> 
             <span *ngIf="hasLoggedIn() && getManagerType()=='true'">Manager</span>
             <span *ngIf="hasLoggedIn() && getManagerType()=='false'">Employee</span>
           </li>
