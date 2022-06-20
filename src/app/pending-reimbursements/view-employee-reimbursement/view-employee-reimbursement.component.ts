@@ -11,7 +11,6 @@ import { ReimbursementsService } from '../reimbursements.service';
 export class ViewEmployeeReimbursementComponent implements OnInit {
 
   viewEmployeeReimbursement: Reimbursement[];
-  storeMessage: string = "";
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -21,15 +20,8 @@ export class ViewEmployeeReimbursementComponent implements OnInit {
 
   ngOnInit(): void {
     let eIdParam = this.activatedRoute.snapshot.paramMap.get('eID');
-    this.reimbursementService.getEmployeeReimbursement(eIdParam).subscribe(
-      {
-        next : (response) => {
-          this.viewEmployeeReimbursement = response;
-      },
-      error : (error) => {
-        console.log(error.error.errorMessage);
-        this.storeMessage = error.error.errorMessage;
-      }
+    this.reimbursementService.getEmployeeReimbursement(eIdParam).subscribe((response) => {
+      this.viewEmployeeReimbursement = response;
     });
   }
 }

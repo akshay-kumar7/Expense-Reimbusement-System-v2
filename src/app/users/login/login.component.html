@@ -1,66 +1,61 @@
-    <div class="container">
-        <form #myForm="ngForm">
-            <div class="text-danger">{{ invalidMessage }}</div>
-            <section class="vh-100 gradient-custom">
-                <div class="container py-5 h-100">
-                  <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                      <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+<div class="container">
+    <form #myForm="ngForm">
+        <div class="text-danger">{{ invalidMessage }}</div>
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
 
-                            <div class="mb-md-5 mt-md-4 pb-5" *ngIf="storeMessage == '' ">
-                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                                <p class="text-white-50 mb-5">Please enter your login and password!</p>
-                                        <div class="form-outline form-white mb-4">
-                                            <label for="uemail" class="form-label"></label>
-                                                <input 
-                                                type="text" 
-                                                class="form-control form-control-lg" 
-                                                id="uemail" 
-                                                placeholder="Enter Email" 
-                                                name="uemail"
-                                                [(ngModel)]="user.email" 
-                                                required 
-                                                #usEmail="ngModel">
-                                                <div *ngIf="!usEmail.valid && usEmail.touched" class="text-danger small">
-                                                    Email is required!
-                                                </div>
-                                        </div>
-
-                                                <div class="form-outline mb-4">
-                                                    <label for="uPassword" class="form-label"></label>
-                                                        <input 
-                                                            type="password" 
-                                                            class="form-control form-control-lg" 
-                                                            id="uPassword" 
-                                                            placeholder="Enter password"
-                                                            name="password" 
-                                                            [(ngModel)]="user.password" 
-                                                            required 
-                                                            #usPassword="ngModel">
-                                                    <div *ngIf="!usPassword.valid && usPassword.touched" class="text-danger small">
-                                                    Password is required!
-                                                    </div>
-                                                </div>
-                                            
-                                                <button type="button" class="btn btn-outline-light btn-lg px-5" (click)="loginValidation()" [disabled]="!myForm.valid">Login</button>         
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                                    <div class="form-outline form-white mb-4">
+                                        <label for="uemail" class="form-label"></label>
+                                            <input 
+                                            type="text" 
+                                            class="form-control form-control-lg" 
+                                            id="uemail" 
+                                            placeholder="Enter Email" 
+                                            name="uemail"
+                                            [(ngModel)]="user.email" 
+                                            required 
+                                            #usEmail="ngModel">
+                                            <div *ngIf="!usEmail.valid && usEmail.touched" class="text-danger small">
+                                                Email is required!
                                             </div>
-                                                <div>
-                                                    <p class="mb-0">Don't have an account? <a class="nav-link" routerLink="/register" class="text-white-50 fw-bold">Sign Up</a></p>
-                                                </div>
-                                            
-                                                <!-- <button type="button" class="btn btn-warning" (click)="register()">Register New User</button> -->
-                                            
-                                </div>     
-                        </div>
+                                    </div>
 
-                        <div *ngIf="storeMessage != '' ">
-                            <h3 class="text-danger"> {{ storeMessage }}</h3>
-                        </div>
-                        
+                                            <div class="form-outline mb-4">
+                                                <label for="uPassword" class="form-label"></label>
+                                                    <input 
+                                                        type="password" 
+                                                        class="form-control form-control-lg" 
+                                                        id="uPassword" 
+                                                        placeholder="Enter password"
+                                                        name="password" 
+                                                        [(ngModel)]="user.password" 
+                                                        required 
+                                                        #usPassword="ngModel">
+                                                <div *ngIf="!usPassword.valid && usPassword.touched" class="text-danger small">
+                                                Password is required!
+                                                </div>
+                                            </div>
+                                        
+                                            <button type="button" class="btn btn-outline-light btn-lg px-5" (click)="loginValidation()" [disabled]="!myForm.valid">Login</button>         
+                                        </div>
+                                            <div>
+                                                <p class="mb-0">Don't have an account? <a class="nav-link" routerLink="/register" class="text-white-50 fw-bold">Sign Up</a></p>
+                                            </div>
+                                        
+                                            <!-- <button type="button" class="btn btn-warning" (click)="register()">Register New User</button> -->
+                                        
+                            </div>          
                     </div>
                 </div>
             </div>
-        </section>
-        </form>
-    </div>
+        </div>
+    </section>
+    </form>
+</div>

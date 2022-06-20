@@ -12,7 +12,6 @@ import { AuthService } from 'src/app/users/auth.service';
 export class SubmitReimbursementComponent implements OnInit {
 
   currentAllReimbursements: Reimbursement[];
-  storeMessage: string = "";
 
  newReimbursement: Reimbursement = {
 
@@ -41,24 +40,21 @@ export class SubmitReimbursementComponent implements OnInit {
       submitInfo() {
 
 
-        this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe(
-          {
-            next : (response)=>{
-              console.log(response);
-              alert("Request submitted!");
-              this.newReimbursement = {
-                reimbursementId: 0,
-                employeeId: 0,
-                managerId:0,
-                status:'',
-                amount:0,
-                reason:''
-              };
-          },
-          error : (error) => {
-            console.log(error.error.errorMessage);
-            this.storeMessage = error.error.errorMessage;
-          }
+        this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe((response)=>{
+
+          console.log(response);
+
+          alert("Request submitted!");
+
+          this.newReimbursement = {
+            reimbursementId: 0,
+            employeeId: 0,
+            managerId:0,
+            status:'',
+            amount:0,
+            reason:''
+          };
+      
       })
 
   }

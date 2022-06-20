@@ -10,8 +10,7 @@ import { Reimbursement } from '../reimbursement.model';
 })
 export class ViewPendingReimbursementsComponent implements OnInit {
 
-  currentAllPendingReimbursements: Reimbursement[];
-  storeMessage: string = "";
+  currentAllPendingReimbursements: Reimbursement[]
 
   currentReimbursement: Reimbursement = {
     reimbursementId: 0,
@@ -33,16 +32,9 @@ export class ViewPendingReimbursementsComponent implements OnInit {
   }
 
   loadData(){
-    this.ReimbursementsService.getAllPendingReimbursements().subscribe(
-      { 
-        next :  response => {
-          console.log(response);
-          this.currentAllPendingReimbursements = response;
-      },
-      error : (error) => {
-        console.log(error.error.errorMessage);
-        this.storeMessage = error.error.errorMessage;
-      }
+    this.ReimbursementsService.getAllPendingReimbursements().subscribe(response => {
+      console.log(response);
+      this.currentAllPendingReimbursements = response;
     })
   }
 
@@ -55,17 +47,13 @@ export class ViewPendingReimbursementsComponent implements OnInit {
         amount,
         reason
       }
-      this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe(
-        {
-          next : (response)=>{
-            console.log(response);
-            this.loadData();
-        },
-        error : (error) => {
-          console.log(error.error.errorMessage);
-          this.storeMessage = error.error.errorMessage;
-        }
+      this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe((response)=>{
+        console.log(response);
+
+        this.loadData();
       })
+
+
   }
 
   denyRequestStatus(reimbursementId: number, employeeId: number, managerId: number, amount: number, reason: string){
@@ -77,16 +65,10 @@ export class ViewPendingReimbursementsComponent implements OnInit {
       amount,
       reason
     }
-    this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe(
-      {
-        next : (response)=>{
-          console.log(response);
-          this.loadData();
-      },
-      error : (error) => {
-        console.log(error.error.errorMessage);
-        this.storeMessage = error.error.errorMessage;
-      } 
+    this.ReimbursementsService.changeReimbursement(this.currentReimbursement).subscribe((response)=>{
+      console.log(response);
+
+      this.loadData();
     })
   }
 
