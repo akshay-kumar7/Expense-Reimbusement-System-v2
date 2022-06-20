@@ -12,12 +12,11 @@ export class AuthService {
 
   constructor() { }
 
-  storeUserInfo(user: User): void{
+  storeUserInfo(user: User): void {
     sessionStorage.setItem("userInformation", JSON.stringify(user));
   }
 
-  retreiveUserInfo(): User{
-
+  retreiveUserInfo(): User {
     let returnUser: User = {
       employeeId: 0,
       managerId: 0,
@@ -27,30 +26,16 @@ export class AuthService {
       userName: '',
       password: '',
       managerType: false
-    };
-    let userData: any = sessionStorage.getItem("userInformation");
-    if(userData!=null){
-      returnUser= JSON.parse(userData);
-
-    let returnUser:User = {
-      employeeId: 0,
-      managerId: 0,
-      firstName: '',
-        lastName: '',
-        email: '',
-        userName: '',
-        password: '',
-        managerType: false}
+    }
 
     let userData: any = sessionStorage.getItem("userInformation");
-    if(userData!=null){
+    if (userData != null) {
       returnUser = JSON.parse(userData);
-
     }
     return returnUser;
   }
 
-  removeUserInfo(): void{
+  removeUserInfo(): void {
     sessionStorage.removeItem("userInformation");
   }
 
