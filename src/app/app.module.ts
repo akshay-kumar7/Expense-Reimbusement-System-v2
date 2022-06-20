@@ -14,6 +14,7 @@ import { LogoutComponent } from './users/logout/logout.component';
 import { ViewEmployeeReimbursementComponent } from './pending-reimbursements/view-employee-reimbursement/view-employee-reimbursement.component';
 import { SubmitReimbursementComponent } from './pending-reimbursements/submit-reimbursement/submit-reimbursement.component';
 import { RegisterComponent } from './users/register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './users/register/register.component';
     LogoutComponent,
     ViewEmployeeReimbursementComponent,
     SubmitReimbursementComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

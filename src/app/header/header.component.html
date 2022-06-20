@@ -1,5 +1,4 @@
 <div *ngIf="hasLoggedIn()">
-<body class *ngIf="hasLoggedIn()">
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between"> <a href="index.html"
       class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span
@@ -48,12 +47,12 @@
         <span>View All Employees</span> </a></li>
   </ul>
 </aside>
-</body> 
+
 <script src="https://bootstrapmade.com/assets/js/demo-3.3.0.js"></script>
 
 
 
-<!-- <div>
+<!-- <div *ngIf="hasLoggedIn()">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="javascript:void(0)">Demo</a>
@@ -87,4 +86,4 @@
         </div>
       </div>
     </nav>
-  </div> -->
+  </div>  -->
