@@ -39,7 +39,7 @@
       <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li *ngIf="hasLoggedIn() && getManagerType()=='true'"> <a routerLink="view-pending-reimbursements"> <i class="bi bi-circle"></i><span>Pending Reimbursements</span> </a></li>
         <li *ngIf="hasLoggedIn() && getManagerType()=='true'"> <a routerLink="view-resolved-reimbursements"> <i class="bi bi-circle"></i><span>Resolved Reimbursements</span> </a></li>
-        <li *ngIf="hasLoggedIn() && getManagerType()=='false'"> <a routerLink=""> <i class="bi bi-circle"></i><span>My Reimbursements</span> </a></li>
+        <li *ngIf="hasLoggedIn() && getManagerType()=='false'"> <a routerLink="view-my-reimbursement"> <i class="bi bi-circle"></i><span>My Reimbursements</span> </a></li>
         <li *ngIf="hasLoggedIn() && getManagerType()=='false'"> <a routerLink="submit-reimbursement"> <i class="bi bi-circle"></i><span>Submit A Reimbursement</span> </a></li>
       </ul>
     </li>
