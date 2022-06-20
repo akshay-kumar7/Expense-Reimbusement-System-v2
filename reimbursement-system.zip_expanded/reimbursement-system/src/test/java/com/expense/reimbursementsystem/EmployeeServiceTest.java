@@ -3,7 +3,7 @@ package com.expense.reimbursementsystem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.any;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,26 +17,35 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.expense.reimbursementsystem.dao.EmployeeDao;
+import com.expense.reimbursementsystem.entity.EmployeeEntity;
 import com.expense.reimbursementsystem.exception.ApplicationException;
+import com.expense.reimbursementsystem.exception.EmployeeNotFoundException;
+import com.expense.reimbursementsystem.exception.EmptyEmployeeList;
+import com.expense.reimbursementsystem.exception.LoginFailedException;
+import com.expense.reimbursementsystem.pojo.EmployeePojo;
 import com.expense.reimbursementsystem.service.EmployeeServiceImpl;
 
 @ExtendWith (MockitoExtension.class)
 public class EmployeeServiceTest {
+	
 	@Mock
-	private EmployeeDao daoMock;
+	EmployeeDao employeeDao;
 	
 	@InjectMocks
-	private EmployeeServiceImpl EmpService;
+	EmployeeServiceImpl employeeService;
+
+	private EmployeePojo expectedEmployeePojo;
+	private EmployeeEntity dummyEmployeeEntity;
 	
-	@Test
 	
-	public void testlogin() throws ApplicationException {
-		
-//		EmployeeEntity sendEntity = 
-//		
-//		when(daoMock.get)
-//		assertTrue(true);
+	@BeforeEach
+	public void setup() {
+		expectedEmployeePojo = new EmployeePojo(444, 111, "John", "Doe", 
+				"jdoe@gmail.com", "jdoe", "jd123", true);
+		dummyEmployeeEntity = new EmployeeEntity(444, 111, "John", "Doe", 
+				"jdoe@gmail.com", "jdoe", "jd123", true);
 	}
+	 
 
 	@DisplayName("JUnit Test for login() method")
 	@Test
@@ -55,22 +64,14 @@ public class EmployeeServiceTest {
 		when(employeeDao.findById(444)).thenReturn(Optional.of(dummyEmployeeEntity));
 		
 		EmployeePojo actualEmployeePojo = employeeService.viewInfo(444);
-		assertEquals(expectedEmployeePojo, actualEmployeePojo);
+		assertEquals(444, actualEmployeePojo.getEmployeeId());
 	}
 
 	@DisplayName("JUnit Test for updateInfo() method")
-//	@MockitoSettings(strictness = Strictness.WARN)
 	@Test
 	public void testUpdateInfo() throws ApplicationException {
 		
-		when(employeeDao.save(dummyEmployeeEntity)).thenReturn(dummyEmployeeEntity);
-//		doReturn(dummyEmployeeEntity).when(employeeDao.save(dummyEmployeeEntity));
-		doReturn(dummyEmployeeEntity).when(employeeDao).save(dummyEmployeeEntity);
-
-		
-		// when(spy.get(0)).thenReturn("foo");
-		// doReturn("foo").when(spy).get(0);
-		
+		when(employeeDao.save(any(EmployeeEntity.class))).thenReturn(dummyEmployeeEntity);		
 		
 		EmployeePojo sendEmployeePojo = new EmployeePojo(444, 111, "John", "Doe", 
 				"jdoe@gmail.com", "jdoe", "jd123", true);
@@ -88,17 +89,14 @@ public class EmployeeServiceTest {
 		
 		assertNotNull(actualAllEmployeePojoList);
 		assertEquals(3, actualAllEmployeePojoList.size());
+		assertEquals(expectedEmployeePojo.getFirstName(), actualAllEmployeePojoList.get(0).getFirstName());
 		
 	}
 	
 	@DisplayName("JUnit Test for register() method")
-//	@MockitoSettings(strictness = Strictness.WARN)
 	@Test
 	public void testRegister() throws ApplicationException {
-		EmployeeEntity dummyRegisterEmployeeEntity = new EmployeeEntity(444, 111, "John", "Doe", 
-				"jdoe@gmail.com", "jdoe", "jd123", true);
-		
-		when(employeeDao.saveAndFlush(dummyRegisterEmployeeEntity)).thenReturn(dummyRegisterEmployeeEntity);
+		when(employeeDao.saveAndFlush(any(EmployeeEntity.class))).thenReturn(dummyEmployeeEntity);
 		
 		EmployeePojo sendEmployeePojo = new EmployeePojo(444, 111, "John", "Doe", 
 				"jdoe@gmail.com", "jdoe", "jd123", true);

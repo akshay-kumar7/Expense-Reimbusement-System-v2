@@ -1,11 +1,9 @@
 package com.expense.reimbursementsystem.exception;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.jetty.client.HttpAuthenticationStore;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +18,9 @@ import org.springframework.validation.FieldError;
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-	// Defining Global Handlers for Exceptions
-
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
-
-		//return super.handleMethodArgumentNotValid(ex, headers, status, request);
 
 		Map<String, String> errors = new HashMap<>();
 		ex.getBindingResult().getAllErrors().forEach((error) -> {
@@ -35,7 +29,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 			errors.put(fieldName, errorMessage);
 		});
 
-		//Returning ResponseEntity, in that way we can manipulate response header and status if required
 		return new ResponseEntity<Object>(errors, headers, status);
 	}
 
