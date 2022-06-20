@@ -37,7 +37,6 @@
 
     <logger name="com.expense.reimbursementsystem" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
-        <!-- <appender-ref ref="Console" /> -->
     </logger>
 
 </configuration>

@@ -33,8 +33,7 @@ public class EmployeeController {
 		return employeeService.getAllEmployees();
 	}
 	
-	
-	// http://localhost:5555/api/employee
+	// http://localhost:5555/api/employee/register
 	@PostMapping("employee/register")
 	public EmployeePojo register(@RequestBody EmployeePojo employeePojo) throws ApplicationException {
 		return employeeService.register(employeePojo);
