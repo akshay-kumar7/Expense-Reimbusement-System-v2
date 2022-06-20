@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursement } from '../reimbursement.model';
+import { AuthService } from 'src/app/users/auth.service';
 
 @Component({
   selector: 'submit-reimbursement',
@@ -17,7 +18,7 @@ export class SubmitReimbursementComponent implements OnInit {
     reimbursementId: 0,
     employeeId: 0,
     managerId:0,
-    status:'pending',
+    status:'Pending',
     amount:0,
     reason:''
     
@@ -28,13 +29,16 @@ export class SubmitReimbursementComponent implements OnInit {
     this.currentAllReimbursements =[];
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+    
+  }
 
 
 
       submitInfo() {
 
-        // var eID = sessionStorage.getItem('userInformation')
 
         this.reimbursementsService.submitNewReimbursement(this.newReimbursement).subscribe((response)=>{
 
@@ -52,6 +56,7 @@ export class SubmitReimbursementComponent implements OnInit {
           };
       
       })
+
   }
 
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expense.reimbursementsystem.exception.ApplicationException;
+import com.expense.reimbursementsystem.exception.EmployeeNotFoundException;
 import com.expense.reimbursementsystem.pojo.ReimbursementPojo;
 import com.expense.reimbursementsystem.service.ReimbursementService;
 
@@ -27,7 +28,7 @@ public class ReimbursementContoller {
 	// http://localhost:5555/reimbursement/2
 	@GetMapping("/{eID}")
 	public List<ReimbursementPojo> viewEmployeeRequests(@PathVariable("eID") int employeeId)
-			throws ApplicationException {
+			throws ApplicationException, EmployeeNotFoundException {
 		return reimbursementService.viewEmployeeRequests(employeeId);
 	}
 

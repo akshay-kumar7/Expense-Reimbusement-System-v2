@@ -5,9 +5,11 @@
         <div class="col-8">
             <div>
                 <div class="container">
-                 <form>
-                  <div class="card m-3">
-                    <div class="card-header bg-warning">Submit Reimbursement</div>
+                 <form #myForm="ngForm">
+                  <div class="card mt-5">
+                    <div class="card-header bg-light">
+                        <h4>Submit Reimbursement Form</h4>
+                    </div>
                     <div class="card-body">
                         
                         <div class="mb-3 mt-3">
@@ -17,7 +19,8 @@
                                 class="form-control" 
                                 id="rID"  
                                 name="EmployeeId"
-                                [(ngModel)]="newReimbursement.employeeId">
+                                [(ngModel)]="newReimbursement.employeeId" required
+                                >
 
                         </div>
                         <div class="mb-3 mt-3">
@@ -27,7 +30,7 @@
                                 class="form-control" 
                                 id="mID"  
                                 name="ManagerId"
-                                [(ngModel)]="newReimbursement.managerId">
+                                [(ngModel)]="newReimbursement.managerId" required>
 
                         </div>
                         <div class="mb-3">
@@ -38,9 +41,9 @@
                                 id="rAmount" 
                                 placeholder="Enter Amount" 
                                 name="ReimbursementAmount"
-                                [(ngModel)]="newReimbursement.amount"
+                                [(ngModel)]="newReimbursement.amount"required
                                 #rmAmount = "ngModel">
-                                <div *ngIf="!rmAmount.valid" class="text-danger-small">
+                                <div *ngIf="!rmAmount.valid && rmAmount.touched" class="text-danger small">
                                     Amount Required!
                                 </div>
                         </div>
@@ -52,15 +55,17 @@
                                 id="rReason" 
                                 placeholder="Enter Reason" 
                                 name="Reimbursement Reason"
-                                [(ngModel)]="newReimbursement.reason" required
+                                [(ngModel)]="newReimbursement.reason"required
                                 #rmReason = "ngModel">
-                                <div *ngIf="!rmReason.valid" class="text-danger-small"></div>
+                                <div *ngIf="!rmReason.valid && rmReason.touched" class="text-danger small">
+                                    Reason Required!
+                                </div>
                         </div>
                 
 
                         <button type="button" class="btn btn-primary" (click)="submitInfo()">Submit Reimbursement</button>
                     </div>
-                    <div class="card-footer bg-warning">
+                    <div class="card-footer bg-light">
                 
                     </div>
                   </div>
