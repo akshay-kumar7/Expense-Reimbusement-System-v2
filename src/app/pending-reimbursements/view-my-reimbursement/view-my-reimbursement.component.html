@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            <h2>View Employee Reimbursement</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Reimbursement Id</th>
+                        <th>Employee Id</th>
+                        <th>Manager Id</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reimbursement of viewMyReimbursement">
+                        <td>{{ reimbursement.reimbursementId }}</td>
+                        <td>{{ reimbursement.employeeId }}</td>
+                        <td>{{ reimbursement.managerId }}</td>
+                        <td>{{ reimbursement.status }}</td>
+                        <td>{{ reimbursement.amount }}</td>
+                        <td>{{ reimbursement.reason }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+</div>
