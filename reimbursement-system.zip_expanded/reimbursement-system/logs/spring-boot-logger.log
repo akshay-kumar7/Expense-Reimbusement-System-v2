@@ -828,3 +828,51 @@
 2022-06-20 17:52:23,818 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-8] Entering EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
 2022-06-20 17:52:23,830 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-8] Exiting EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
 2022-06-20 17:52:23,831 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-8] Exiting EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:04:19,585 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ReimbursementSystemApplication using Java 14.0.2 on Asus-GL553VE with PID 8976 (C:\Users\nikak\Revature\expense-reimbursement-system\reimbursement-system.zip_expanded\reimbursement-system\target\classes started by nikak in C:\Users\nikak\Revature\expense-reimbursement-system\reimbursement-system.zip_expanded\reimbursement-system)
+2022-06-20 18:04:19,586 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.7.0, Spring v5.3.20
+2022-06-20 18:04:19,589 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2022-06-20 18:04:39,598 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ReimbursementSystemApplication in 21.855 seconds (JVM running for 25.531)
+2022-06-20 18:05:21,954 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Entering EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:05:21,984 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Entering EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:05:22,013 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Entering EmployeeDao.com.expense.reimbursementsystem.dao.EmployeeDao
+2022-06-20 18:05:22,472 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Exiting EmployeeDao.com.expense.reimbursementsystem.dao.EmployeeDao
+2022-06-20 18:05:22,473 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Exiting EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:05:22,474 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-2] Exiting EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:05:24,304 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-3] Entering EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:05:24,306 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-3] Entering EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:05:24,439 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-3] Exiting EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:05:24,441 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-3] Exiting EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:15:51,695 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Entering EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:15:51,696 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Entering EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:15:51,697 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Entering EmployeeDao.com.expense.reimbursementsystem.dao.EmployeeDao
+2022-06-20 18:15:51,710 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Exiting EmployeeDao.com.expense.reimbursementsystem.dao.EmployeeDao
+2022-06-20 18:15:51,711 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Exiting EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:15:51,712 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-7] Exiting EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:15:53,351 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-1] Entering EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:15:53,354 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-1] Entering EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:15:53,379 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-1] Exiting EmployeeServiceImpl.com.expense.reimbursementsystem.service.EmployeeServiceImpl
+2022-06-20 18:15:53,380 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-1] Exiting EmployeeController.com.expense.reimbursementsystem.contoller.EmployeeController
+2022-06-20 18:15:54,974 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Entering ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:15:55,016 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Entering ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:15:55,112 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Entering ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:15:55,170 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Exiting ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:15:55,173 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Exiting ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:15:55,176 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-5] Exiting ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:38,925 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Entering ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:38,933 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Entering ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:38,942 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Entering ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:38,983 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Exiting ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:38,987 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Exiting ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:38,989 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-4] Exiting ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:40,275 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Entering ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:40,277 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Entering ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:40,280 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Entering ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:40,289 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Exiting ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:40,290 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Exiting ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:40,291 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-10] Exiting ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:40,293 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Entering ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
+2022-06-20 18:19:40,294 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Entering ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:40,295 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Entering ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:40,308 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Exiting ReimbursementDao.com.expense.reimbursementsystem.dao.ReimbursementDao
+2022-06-20 18:19:40,310 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Exiting ReimbursementServiceImpl.com.expense.reimbursementsystem.service.ReimbursementServiceImpl
+2022-06-20 18:19:40,311 INFO com.expense.reimbursementsystem.aop.LoggingAspect [http-nio-5555-exec-9] Exiting ReimbursementContoller.com.expense.reimbursementsystem.contoller.ReimbursementContoller
