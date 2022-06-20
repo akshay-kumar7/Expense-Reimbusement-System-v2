@@ -16,7 +16,9 @@ export class AuthService {
     sessionStorage.setItem("userInformation", JSON.stringify(user));
   }
 
+
   retreiveUserInfo(): User {
+
     let returnUser: User = {
       employeeId: 0,
       managerId: 0,
@@ -26,12 +28,14 @@ export class AuthService {
       userName: '',
       password: '',
       managerType: false
+
     }
 
     let userData: any = sessionStorage.getItem("userInformation");
     if (userData != null) {
       returnUser = JSON.parse(userData);
-    }
+
+    };
     return returnUser;
   }
 
@@ -40,3 +44,4 @@ export class AuthService {
   }
 
 }
+
