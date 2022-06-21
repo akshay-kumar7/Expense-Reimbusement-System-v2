@@ -40,8 +40,11 @@
 </header>
 <aside id="sidebar" class="sidebar" *ngIf="hasLoggedIn()">
   <ul class="sidebar-nav" id="sidebar-nav">
-    <li class="nav-item" *ngIf="hasLoggedIn()"> <a routerLink="/"> <i class="bi bi-grid"></i>
+    <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='true'"> <a routerLink="/managerhome"> <i class="bi bi-grid"></i>
         <span>Hompage</span> </a>
+    </li>
+    <li class="nav-item" *ngIf="hasLoggedIn() && getManagerType()=='false'"> <a routerLink="/employeehome"> <i class="bi bi-grid"></i>
+      <span>Hompage</span> </a>
     </li>
     <li class="nav-item" *ngIf="hasLoggedIn()"> <a class="nav-link collapsed" data-bs-target="#forms-nav"
         data-bs-toggle="collapse" href="#">
