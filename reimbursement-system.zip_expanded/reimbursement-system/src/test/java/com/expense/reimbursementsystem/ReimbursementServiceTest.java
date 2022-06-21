@@ -94,15 +94,6 @@ public class ReimbursementServiceTest {
 		assertEquals(expectedReimbursementPojo.getReason(), actualReimbursementPojo.getReason());
 	}
 	
-	@DisplayName("JUnit Test for submitRequest() method")
-	@Test
-	public void submitRequest() throws ApplicationException {
-		when(reimbursementDao.save(any(ReimbursementEntity.class))).thenReturn(dummyReimbursementEntity);
-		
-		ReimbursementPojo actualReimbursementPojo = reimbursementService.submitRequest(expectedReimbursementPojo);
-		
-		assertEquals(expectedReimbursementPojo.getEmployeeId(), actualReimbursementPojo.getEmployeeId());
-	}
-	
+
 	
 }
