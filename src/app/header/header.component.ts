@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeeService, private router: Router, private authService: AuthService ) { }
 
   ngOnInit(): void {
-    this.newEmployee = this.authService.retreiveUserInfo();
   }
 
   hasLoggedIn(){
@@ -39,6 +38,11 @@ export class HeaderComponent implements OnInit {
 
   hasLoggedOut(): void{
     this.authService.removeUserInfo();
+  }
+
+  retrieveUserInfo(){
+    this.newEmployee = this.authService.retreiveUserInfo();
+    return this.authService.retreiveUserInfo();
   }
 
 }
